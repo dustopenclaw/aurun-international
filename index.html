@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurun International Singapore Pte. Ltd. | Pharmaceutical Trading</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description" content="Aurun International - Leading pharmaceutical trading company based in Singapore, connecting global healthcare with Asian markets.">
+    
+    <!-- Google Analytics (placeholder) -->
+    <!-- Google Analytics (placeholder) -->
+<!-- Google Tag Manager (placeholder) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-dark: #002244;
+            --primary-light: #004488;
+            --secondary: #0066cc;
+            --accent: #ff6600;
+            --light: #f5f7fa;
+            --light-gray: #e8ecf0;
+            --dark: #1a1a2e;
+            --text: #333333;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --white: #ffffff;
+            --border: #dde1e6;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Language Selector - Top Bar */
+        .lang-bar {
+            background: var(--primary);
+            padding: 8px 0;
+            font-size: 13px;
+        }
+        
+        .lang-bar-inner {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        
+        .lang-bar a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 2px 8px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+        
+        .lang-bar a:hover,
+        .lang-bar a.active {
+            color: var(--white);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        .logo-text span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .main-nav a {
+            display: block;
+            padding: 10px 18px;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        
+        .main-nav a:hover {
+            background: var(--light);
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .main-nav a.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0,51,102,0.6) 0%, rgba(0,34,68,0.7) 100%),
+                        url('images/hero-bg.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,51,102,0.15);
+            z-index: 0;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .hero-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            flex: 1;
+            max-width: 650px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+
+        
+        .hero h1 span {
+            color: #66b3ff;
+        }
+        
+        .hero-desc {
+            font-size: 17px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .hero-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 220px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-card:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-2px);
+        }
+        
+        .hero-card-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .hero-card-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 5px;
+        }
+        
+        .hero-card-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        
+        
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #e55c00;
+            text-decoration: none;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+            text-decoration: none;
+        }
+        
+        /* Quick Info Cards */
+        
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-light {
+            background: var(--light);
+        }
+        
+        .section-header {
+            margin-bottom: 45px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 14px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+        
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 700px;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .about-image {
+            background: url('images/team-1.jpg') center/cover no-repeat;
+            border-radius: 8px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 16px;
+            position: relative;
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,51,102,0.4);
+            border-radius: 8px;
+        }
+        
+        .about-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .feature-check {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        /* Global Footprint - Key Section */
+        .footprint {
+            background: linear-gradient(135deg, rgba(0,51,102,0.95) 0%, rgba(0,34,68,0.98) 100%),
+                        url('images/globe-asia.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 70px 0;
+        }
+        
+        .footprint .section-title,
+        .footprint .section-desc {
+            color: var(--white);
+        }
+        
+        .footprint .section-desc {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .footprint-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 50px;
+            margin-top: 45px;
+        }
+        
+        .hq-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .hq-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+        }
+        
+        .hq-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .hq-location {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .hq-flag {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        
+        .market-item {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        
+        .market-item:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .market-flag {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .market-name {
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .market-type {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+        
+        .product-icon {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            position: relative;
+        }
+        
+        .product-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,51,102,0.6));
+        }
+        
+        .product-icon span {
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .product-info {
+            padding: 22px;
+        }
+        
+        .product-cat {
+            font-size: 11px;
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .product-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .product-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--primary-light);
+        }
+        
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .service-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+        
+        .service-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light);
+        }
+        
+        .contact-grid {
+            display: block;
+        }
+        
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        
+        .contact-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        
+        .contact-value {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        /* Simple Contact Layout */
+        .contact-info-simple {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            padding: 40px 0;
+        }
+        
+        .contact-item-simple {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon-simple {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .contact-text strong {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-text span {
+            font-size: 16px;
+            color: var(--text);
+        }
+        
+        .contact-text a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            padding: 35px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 14px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .form-submit:hover {
+            background: var(--primary-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a3a5c 0%, #0d2137 100%);
+            color: var(--white);
+            padding: 50px 0 25px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+        
+        .footer-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,51,102,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+            
+            .hero-sidebar {
+                display: none;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                gap: 0;
+            }
+            
+            .main-nav.mobile-open {
+                display: flex;
+            }
+            
+            .main-nav a {
+                padding: 15px;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .markets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Language Bar -->
+    <div class="lang-bar">
+        <div class="container">
+            <div class="lang-bar-inner">
+                <a href="#" class="active" data-lang="en">English</a>
+                <a href="#" data-lang="zh">中文</a>
+                <a href="#" data-lang="ko">한국어</a>
+                <a href="#" data-lang="ja">日本語</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <div class="logo-mark"><img src="logo.png" alt="Aurun International" style="width: auto; height: 45px; object-fit: contain;"></div>
+                </div>
+                <nav class="main-nav">
+                    <a href="#home" class="active" data-en="Home" data-zh="首页" data-ko="홈" data-ja="ホーム">Home</a>
+                    <a href="#about" data-en="About Us" data-zh="关于我们" data-ko="회사 소개" data-ja="会社概要">About Us</a>
+                    <a href="#products" data-en="Business" data-zh="业务" data-ko="서비스" data-ja="事業">Business</a>
+                    <a href="#contact" data-en="Contact" data-zh="联系我们" data-ko="문의" data-ja="お問い合わせ">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" onclick="document.querySelector('.main-nav').classList.toggle('mobile-open')">
+                        <span>☰ Menu</span>
+                    </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    
+                    <div class="hero-tagline" data-en="Based in Singapore" data-zh="总部位于新加坡" data-ko="싱가포르에 본사" data-ja="シンガポールに本社">Based in Singapore</div>
+                    <h1 data-en="One-Stop Solutions in the Biopharmaceutical Industry" data-zh="生物制药行业一站式解决方案" data-ko="생물 제약 산업 원스톱 솔루션" data-ja="バイオ製薬業界ワンストップソリューション">One-Stop Solutions in the Biopharmaceutical Industry</h1>
+                    <p class="hero-desc" data-en="We provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets for efficient technology transfer and commercialization." data-zh="我们为生物制药行业提供一站式项目与市场解决方案，连接优质制造资源与下游市场，助力高效技术转移与商业化落地。" data-ko="우리는 생물 제약 업계에 원스톱 프로젝트 및 시장 솔루션을 제공하며, 고품질 제조 자원을 하류 시장과 연결하여 효율적인 기술 이전과 상업화를 실현합니다." data-ja="バイオ製薬業界にワンストップのプロジェクト・市場ソリューションを提供し、高品質な製造リソースを下流市場につなげ、効率的な技術移転と商業化を実現します。">We provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets for efficient technology transfer and commercialization.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary" data-en="Contact Us" data-zh="联系我们" data-ko="문의하기" data-ja="お問い合わせ">Contact Us →</a>
+                        <a href="#products" class="btn btn-outline" data-en="Our Business" data-zh="核心业务" data-ko="핵심 비즈니스" data-ja="コアビジネス">Our Business</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" data-en="About Us" data-zh="关于我们" data-ko="회사 소개" data-ja="会社概要">About Us</div>
+                <h2 class="section-title" data-en="Your Trusted Partner in Pharmaceutical Trade" data-zh="您值得信赖的医药贸易伙伴" data-ko="의약품 거래에서 신뢰할 수 있는 파트너" data-ja="医薬品取引における信頼のパートナー">Your Trusted Partner in Pharmaceutical Trade</h2>
+                <p class="section-desc" data-en="We facilitate seamless connections between international pharmaceutical manufacturers and Asian markets, ensuring quality products reach those who need them." data-zh="我们促进国际制药商与亚洲市场之间的无缝连接，确保优质产品到达需要的人手中。" data-ko="우리는 국제 의약품 제조사와 아시아 시장 사이의 원활한 연결을 촉진하여 필요한 사람들에게 품질 제품이 도달하도록 합니다." data-ja="国際的な医薬品メーカーとアジア市場之间的シームレスな 연결を促進し、品質の必要な人々に製品が届くようにします。">We facilitate seamless connections between international pharmaceutical manufacturers and Asian markets, ensuring quality products reach those who need them.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <span data-en="📷 Company Image" data-zh="📷 公司图片" data-ko="📷 회사 이미지" data-ja="📷 会社画像">📷 Company Image</span>
+                </div>
+                <div class="about-content">
+                    <h3 data-en="Building Healthier Futures Through Partnership" data-zh="通过合作创造更健康的未来" data-ko=" 파트너십을 통해 더 건강한 미래 구축" data-ja="パートナーシップを通じてより健康的な未来を作る">Building Healthier Futures Through Partnership</h3>
+                    <p data-en="Established in Singapore, Aurun International has built a strong reputation as a reliable pharmaceutical trading partner. We work closely with trusted manufacturers worldwide to import and distribute high-quality medicines, health supplements, and medical devices across Asian markets." data-zh="Aurun International 在新加坡成立，作为可靠的医药贸易合作伙伴建立了良好的声誉。我们与全球可信的制造商紧密合作，在亚洲市场进口和分销高品质药品、健康补充剂和医疗器械。" data-ko="싱가포르에서 설립된 Aurun International은 신뢰할 수 있는 의약품 거래 파트너로서 강한 평판을 구축했습니다. 우리는 전 세계적으로 신뢰할 수 있는 제조업체와 긴밀히 협력하여 아시아 시장 전반에 고품질 의약품, 건강 보충제 및 의료 기기를 수입하고 유통합니다." data-ja="シンガポールで設立されたAurun Internationalは、信頼できる医薬品取引パートナーとしての強い評判を築きました。世界の信頼できるメーカーと緊密に協力し、アジア市場全体に高品質な医薬品、健康補給食、医療機器を輸入・流通させています。">Established in Singapore, Aurun International has built a strong reputation as a reliable pharmaceutical trading partner. We work closely with trusted manufacturers worldwide to import and distribute high-quality medicines, health supplements, and medical devices across Asian markets.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <span class="feature-text" data-en="Quality Assured Products" data-zh="质量保证产品" data-ko="품질 보증 제품" data-ja="品質保証製品">Quality Assured Products</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <span class="feature-text" data-en="Global Supplier Network" data-zh="全球供应商网络" data-ko="글로벌 공급업체 네트워크" data-ja="グローバルサプライヤーネットワーク">Global Supplier Network</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <span class="feature-text" data-en="Efficient Logistics" data-zh="高效物流" data-ko="효율적인 물류" data-ja="効率的な物流">Efficient Logistics</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <span class="feature-text" data-en="Regulatory Compliance" data-zh="法规合规" data-ko="규정 준수" data-ja="規制コンプライアンス">Regulatory Compliance</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <span class="feature-text" data-en="Market Expertise" data-zh="市场专业知识" data-ko="시장 전문 지식" data-ja="市場専門知識">Market Expertise</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <span class="feature-text" data-en="Reliable Support" data-zh="可靠支持" data-ko="신뢰할 수 있는 지원" data-ja="信頼できるサポート">Reliable Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" data-en="Our Business" data-zh="核心业务" data-ko="핵심 비즈니스" data-ja="コアビジネス">Our Business</div>
+                <h2 class="section-title" data-en="Core Business Areas" data-zh="核心业务领域" data-ko="핵심 비즈니스 영역" data-ja="コアビジネス領域">Core Business Areas</h2>
+                <p class="section-desc" data-en="Six key business areas covering the biopharmaceutical value chain." data-zh="六大核心业务领域，覆盖生物制药价值链。" data-ko="생물 제약 가치 사슬을 커버하는 6가지 핵심 비즈니스 영역." data-ja="バイオ製薬バリューチェーンをカバーする6つのコアビジネス領域。">Six key business areas covering the biopharmaceutical value chain.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon" style="background-image: url('images/business-1.jpg');"><span>💊</span></div>
+                    <div class="product-info">
+                        <div class="product-cat">Material Trading</div>
+                        <div class="product-name" data-en="Pharmaceutical Raw Material" data-zh="医药原料" data-ko="의약품 원료" data-ja="医薬品原料">Pharmaceutical Raw Material</div>
+                        <div class="product-desc" data-en="Trading of pharmaceutical raw materials including APIs and intermediates from global manufacturers." data-zh="来自全球制造商的医药原料贸易，包括原料药及中间体。" data-ko="글로벌 제조사로부터 의약품 원료 및 중간체를 포함한 의약품 원료 거래." data-ja="世界中のメーカーからの医薬品原料（API・中間体）の取引。">Trading of pharmaceutical raw materials including APIs and intermediates from global manufacturers.</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon" style="background-image: url('images/business-2.jpg');"><span>🔬</span></div>
+                    <div class="product-info">
+                        <div class="product-cat">Technology Transfer</div>
+                        <div class="product-name" data-en="Formulation & Tech Transfer" data-zh="制剂与技术转移" data-ko="제조 기술 이전" data-ja="製剤・技術移転">Formulation & Tech Transfer</div>
+                        <div class="product-desc" data-en="Formulation development and technology transfer project management for seamless product commercialization." data-zh="制剂开发与技术转移项目管理，助力产品商业化落地。" data-ko="원활한 제품 상업화를 위한 제형 개발 및 기술 이전 프로젝트 관리." data-ja="製品商業化のための製剤開発・技術移転プロジェクト管理。">Formulation development and technology transfer project management for seamless product commercialization.</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon" style="background-image: url('images/business-3.jpg');"><span>📋</span></div>
+                    <div class="product-info">
+                        <div class="product-cat">FDF Registration</div>
+                        <div class="product-name" data-en="Finished Dosage Form" data-zh="成品剂型" data-ko="완제제" data-ja="製剤">Finished Dosage Form</div>
+                        <div class="product-desc" data-en="FDF registration support, importation, and market access services across Asian markets." data-zh="亚洲市场的成品剂型注册支持、进口及市场准入服务。" data-ko="아시아 시장 전반의 완제제 등록 지원, 수입 및 시장 접근 서비스." data-ja="アジア市場での製剤登録サポート・輸入・市場参入サービス。">FDF registration support, importation, and market access services across Asian markets.</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon" style="background-image: url('images/business-4.jpg');"><span>🧴</span></div>
+                    <div class="product-info">
+                        <div class="product-cat">Cosmetic & Health</div>
+                        <div class="product-name" data-en="Cosmetic & Health Products" data-zh="化妆品及健康产品" data-ko="화장품 및 건강 제품" data-ja="化粧品・健康製品">Cosmetic & Health Products</div>
+                        <div class="product-desc" data-en="Raw material trading and finished product import/export for cosmetics and health products." data-zh="化妆品及健康产品的原料贸易与成品进出口。" data-ko="화장품 및 건강 제품의 원료 거래 및 완제품 수입/수출." data-ja="化粧品・健康製品の原料取引・完成品輸入輸出。">Raw material trading and finished product import/export for cosmetics and health products.</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon" style="background-image: url('images/business-5.jpg');"><span>🧬</span></div>
+                    <div class="product-info">
+                        <div class="product-cat">Biologics</div>
+                        <div class="product-name" data-en="Biologics In-Licensing" data-zh="生物药许可引进" data-ko="생물의약품 라이선스 도입" data-ja="バイオロジクス導入">Biologics In-Licensing</div>
+                        <div class="product-desc" data-en="Biologics project in-licensing and collaborative development with global partners." data-zh="与全球合作伙伴共同开展生物药项目许可引进与协同开发。" data-ko="글로벌 파트너와 함께 생물의약품 프로젝트 라이선스 도입 및 공동 개발." data-ja="グローバルパートナーとのバイオロジクスプロジェクト導入・共同開発。">Biologics project in-licensing and collaborative development with global partners.</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon" style="background-image: url('images/business-6.jpg');"><span>🏭</span></div>
+                    <div class="product-info">
+                        <div class="product-cat">CDMO</div>
+                        <div class="product-name" data-en="CDMO Services" data-zh="CDMO服务" data-ko="CDMO 서비스" data-ja="CDMOサービス">CDMO Services</div>
+                        <div class="product-desc" data-en="CDMO sourcing, coordination, and project management for manufacturing needs." data-zh="满足制造需求的CDMO资源采购、协调及项目管理。" data-ko="제조 요구에 대한 CDMO 조달, 조정 및 프로젝트 관리." data-ja="製造ニーズに応じたCDMOソーシング・調整・プロジェクト管理。">CDMO sourcing, coordination, and project management for manufacturing needs.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" data-en="Contact" data-zh="联系我们" data-ko="문의" data-ja="お問い合わせ">Contact</div>
+                <h2 class="section-title" data-en="Get In Touch With Us" data-zh="联系我们" data-ko="문의하기" data-ja="お問い合わせ">Get In Touch With Us</h2>
+                <p class="section-desc" data-en="We welcome inquiries about our products and services. Please feel free to contact us for business collaborations." data-zh="我们欢迎关于产品和服务的咨询。如有业务合作意向，请随时与我们联系。" data-ko="우리 제품 및 서비스에 대한 문의를 환영합니다. 비즈니스 협력에 대해 언제든지联系我们해 주세요." data-ja="製品・サービスについてのお問い合わせ歓迎します。ビジネスコラボレーションについては、お気軽にお問い合わせください。">We welcome inquiries about our products and services. Please feel free to contact us for business collaborations.</p>
+            </div>
+            <div class="contact-info-simple">
+                <div class="contact-item-simple">
+                    <div class="contact-icon-simple">📍</div>
+                    <div class="contact-text">
+                        <strong>Address</strong>
+                        <span>24 Sin Ming Lane, #03-91, Midview City, Singapore 573970</span>
+                    </div>
+                </div>
+                <div class="contact-item-simple">
+                    <div class="contact-icon-simple">📧</div>
+                    <div class="contact-text">
+                        <strong>Email</strong>
+                        <span><a href="mailto:ars02@aurunint.com">ars02@aurunint.com</a></span>
+                    </div>
+                </div>
+                <div class="contact-item-simple">
+                    <div class="contact-icon-simple">🌐</div>
+                    <div class="contact-text">
+                        <strong>Website</strong>
+                        <span><a href="https://www.aurunint.com">www.aurunint.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="margin-bottom: 10px;">
+                        <img src="logo.png" alt="Aurun International" style="height: 45px;">
+                    </div>
+                    <div style="font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 3px;">Aurun International</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.7);">Singapore Pte. Ltd.</div>
+                    <p data-en="Based in Singapore, we provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets." data-zh="总部位于新加坡，我们为生物制药行业提供一站式项目与市场解决方案，连接优质制造资源与下游市场。" data-ko="싱가포르에 본사를 두고 있으며, 생물 제약 업계에 원스톱 프로젝트 및 시장 솔루션을 제공하여 고품질 제조 자원을 하류 시장과 연결합니다." data-ja="シンガポールに本社を置き、バイオ製薬業界にワンストップのプロジェクト・市場ソリューションを提供し、高品質な製造リソースを下流市場につなげます。">Based in Singapore, we provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets.</p>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Quick Links" data-zh="快速链接" data-ko="빠른 링크" data-ja="クイックリンク">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-en="Home" data-zh="首页" data-ko="홈" data-ja="ホーム">Home</a></li>
+                        <li><a href="#about" data-en="About Us" data-zh="关于我们" data-ko="회사 소개" data-ja="会社概要">About Us</a></li>
+                        <li><a href="#products" data-en="Our Business" data-zh="核心业务" data-ko="핵심 비즈니스" data-ja="コアビジネス">Our Business</a></li>
+                        <li><a href="#services" data-zh="业务" data-ko="서비스" data-ja="事業">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Products" data-zh="产品" data-ko="제품" data-ja="製品">Products</div>
+                    <ul class="footer-links">
+                        <li><a href="#products" data-en="Pharmaceuticals" data-zh="医药" data-ko="의약품" data-ja="医薬品">Pharmaceuticals</a></li>
+                        <li><a href="#products" data-en="Supplements" data-zh="补充剂" data-ko="보충제" data-ja="補給食">Supplements</a></li>
+                        <li><a href="#products" data-en="Medical Devices" data-zh="医疗设备" data-ko="의료 장비" data-ja="医療機器">Medical Devices</a></li>
+                        <li><a href="#products" data-en="Raw Materials" data-zh="原料" data-ko="원료" data-ja="原料">Raw Materials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Contact" data-zh="联系" data-ko="문의" data-ja="お問い合わせ">Contact</div>
+                    <ul class="footer-links">
+                        <li><a href="mailto:ars02@aurunint.com">ars02@aurunint.com</a></li>
+                        <li><a href="https://www.aurunint.com">www.aurunint.com</a></li>
+                        <li>Singapore</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span data-en="© 2026 Aurun International Singapore Pte. Ltd. All rights reserved." data-zh="© 2026 Aurun International Singapore Pte. Ltd. 保留所有权利。" data-ko="© 2026 Aurun International Singapore Pte. Ltd. 모든 권리 보유." data-ja="© 2026 Aurun International Singapore Pte. Ltd. All rights reserved.">© 2026 Aurun International Singapore Pte. Ltd. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <script>
+        // Language Switching
+        const langLinks = document.querySelectorAll('.lang-bar a');
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update top bar
+            langLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.lang === lang);
+            });
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                el.textContent = el.dataset[lang];
+            });
+        }
+
+        langLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.dataset.lang);
+            });
+        });
+
+        // Smooth Scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Back to Top Button Visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Active Navigation on Scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
