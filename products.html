@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products | Aurun International</title>
+    <link rel="icon" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {--p:#003:#002244;366;--pd--l:#f5f7fa;--lg:#e8ecf0;--t:#333;--tl:#666;--tm:#999;--w:#fff;--b:#dde1e6;--s:0 2px 8px rgba(0,0,0,.08);--primary:#003366;--white:#fff;--border:#e5e7eb}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:"Inter","Noto Sans SC",sans-serif;font-size:15px;line-height:1.6;color:var(--t);background:var(--w)}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        
+        /* Language Bar - Same as index */
+        .lang-bar{background:var(--primary);padding:8px 0;font-size:13px}
+        .lang-bar-inner{display:flex;justify-content:flex-end;gap:20px}
+        .lang-bar a{color:rgba(255,255,255,0.8);text-decoration:none;padding:2px 8px;border-radius:3px;transition:all .2s}
+        .lang-bar a:hover,.lang-bar a.active{color:var(--white);background:rgba(255,255,255,0.15)}
+        
+        /* Header - Same as index */
+        .hdr{background:var(--w);border-bottom:1px solid var(--b);position:sticky;top:0;z-index:100}
+        .hdri{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+        .hdr img{height:45px}
+        .mn{display:flex;gap:8px}
+        .mn a{padding:10px 18px;color:var(--t);font-weight:500;font-size:14px;border-radius:4px;text-decoration:none;transition:.2s}
+        .mn a:hover{background:var(--l);color:var(--p)}
+        .mn a.active{background:var(--p);color:#fff}
+        
+        /* Hero Section */
+        .ph{background:linear-gradient(135deg,var(--p) 0%,var(--pd) 100%);padding:100px 40px 50px;text-align:center;color:#fff}
+        .ph h1{font-size:42px;font-weight:700;margin-bottom:15px}
+        .ph p{font-size:17px;opacity:.9}
+        
+        /* Main Content */
+        .pc{max-width:1400px;margin:0 auto;padding:50px 40px;display:grid;grid-template-columns:280px 1fr;gap:40px}
+        .ps{position:sticky;top:100px;height:fit-content}
+        .cl{background:var(--w);border-radius:12px;overflow:hidden;box-shadow:var(--s)}
+        
+        /* Category Items */
+        .ci{display:flex;align-items:center;gap:15px;padding:18px 22px;cursor:pointer;transition:.3s;border-bottom:1px solid var(--lg)}
+        .ci:last-child{border-bottom:none}
+        .ci:hover,.ci.active{background:#e8f0f8;color:var(--p)}
+        .ci.active .cih, .ci.active .cip { color: var(--p) }
+        .cii{width:45px;height:45px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;background:var(--l)}
+        .ci:hover .cii,.ci.active .cii{background:rgba(255,255,255,.2)}
+        .cih{font-size:15px;font-weight:600;margin-bottom:2px}
+        .cip{font-size:11px;opacity:.8}
+        
+        /* Product List */
+        .pm h2{font-size:26px;margin-bottom:8px;color:var(--p)}
+        .pm>p{color:var(--tl);margin-bottom:25px}
+        
+        /* Search Box */
+        .search-box{margin-bottom:25px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+        .search-box input{padding:12px 16px;border:1px solid var(--b);border-radius:6px;width:260px;font-size:14px;outline:none;transition:.2s}
+        .search-box input:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(0,51,102,.1)}
+        .search-box button{padding:12px 24px;background:var(--p);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:500;transition:.2s}
+        .search-box button:hover{background:var(--pd)}
+        
+        /* Table */
+        .pt{width:100%;border-collapse:collapse;background:var(--w);border-radius:12px;overflow:hidden;box-shadow:var(--s);margin-top:20px}
+        .pt th{background:linear-gradient(135deg,var(--p) 0%,var(--pd) 100%);color:#fff;padding:14px 18px;text-align:left;font-weight:600;font-size:13px;text-transform:uppercase}
+        .pt td{padding:14px 18px;border-bottom:1px solid var(--b);font-size:14px}
+        .pt tr:hover{background:var(--l)}
+        .pt tr:last-child td{border-bottom:none}
+        
+        /* Pagination */
+        .pg{margin-top:30px;display:flex;justify-content:center;gap:8px}
+        .pg a{padding:10px 18px;background:var(--p);color:#fff;border-radius:6px;text-decoration:none;cursor:pointer;transition:.2s}
+        .pg a:hover{background:var(--pd)}
+        .pg span{padding:10px 18px;color:var(--tl)}
+        
+        /* Empty State */
+        .es{text-align:center;padding:80px 40px;color:var(--tm)}
+        .es h3{font-size:22px;margin-bottom:10px;color:var(--t)}
+        
+        /* Footer - Same as index */
+        ft{background:linear-gradient(135deg,#1a3a5c 0%,#0d2137 100%);color:#fff;padding:50px 0 25px}
+        /* Footer - Same as index */
+        footer { background: linear-gradient(135deg, #1a3a5c 0%, #0d2137 100%); color: var(--white); padding: 50px 0 25px }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; max-width: 1200px; margin: 0 auto; padding: 0 20px }
+        .footer-brand p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; margin-top: 15px }
+        .footer-title { font-size: 15px; font-weight: 600; margin-bottom: 20px; color: var(--white) }
+        .footer-links { list-style: none }
+        .footer-links li { margin-bottom: 12px }
+        .footer-links a { color: rgba(255,255,255,0.6); font-size: 14px; text-decoration: none; transition: color 0.2s }
+        .footer-links a:hover { color: var(--white) }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; max-width: 1200px; margin: 0 auto; padding: 25px 20px 0 }
+        @media (1024px) { .footer-grid { grid-template-columns: 1fr 1fr } }
+        @media (768px) { .footer-grid { grid-template-columns: 1fr } }
+        
+        /* Back to Top */
+        .back-to-top{position:fixed;bottom:30px;right:30px;width:45px;height:45px;background:var(--p);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;opacity:.8;transition:.3s}
+        .back-to-top:hover{opacity:1;transform:translateY(-3px)}
+        
+        /* Responsive */
+        @media (1024px){.pc{grid-template-columns:1fr}.ps{position:static}.cl{display:grid;grid-template-columns:repeat(2,1fr)}}
+        @media (768px){
+            .hdri{padding:15px 20px}.mn{display:none}.pc{padding:30px 20px}.fg{grid-template-columns:1fr}
+            .ph h1{font-size:28px}.search-box input{width:100%}.search-box button{width:100%}
+            .pt{font-size:12px}.pt th,.pt td{padding:8px 10px}
+            .pt thead{display:none}.pt tr{display:block;margin-bottom:15px;border:1px solid #ddd;border-radius:8px;background:#fff}
+            .pt td{display:block;text-align:left;padding:8px 15px;border-bottom:none}
+            .pt td:first-child{background:var(--p);color:#fff;border-radius:8px 8px 0 0;font-weight:bold}
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Bar - Same as index -->
+    <div class="lang-bar">
+        <div class="container">
+            <div class="lang-bar-inner">
+                <a href="#" class="active" data-lang="en">English</a>
+                <a href="#" data-lang="zh">中文</a>
+                <a href="#" data-lang="ko">한국어</a>
+                <a href="#" data-lang="ja">日本語</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="hdr">
+        <div class="container">
+            <div class="hdri">
+                <a href="index.html"><img src="logo.png" alt="Aurun"></a>
+                <nav class="mn">
+                    <a id="nav-home" href="index.html?lang=XXX#home" data-en="Home" data-zh="首页" data-ko="홈" data-ja="ホーム">Home</a>
+                    <a id="nav-about" href="index.html?lang=XXX#about" data-en="About Us" data-zh="关于我们" data-ko="회사 소개" data-ja="会社概要">About Us</a>
+                    <a id="nav-business" href="index.html?lang=XXX#products" data-en="Business" data-zh="业务" data-ko="서비스" data-ja="事業">Business</a>
+                    <a id="nav-products" href="index.html?lang=XXX#products-new" data-en="Products" data-zh="产品" data-ko="제품" data-ja="製品">Products</a>
+                    <a id="nav-contact" href="index.html?lang=XXX#contact" data-en="Contact" data-zh="联系我们" data-ko="문의" data-ja="お問い合わせ">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <div class="ph" style="background: linear-gradient(135deg, rgba(0,20,40,0.7) 0%, rgba(0,20,40,0.5) 100%), url('images/hero-singapore-night.jpg') center/cover no-repeat; background-attachment: fixed;">
+        <h1 data-en="Our Products" data-zh="我们的产品" data-ko="당사 제품" data-ja="製品案内">Our Products</h1>
+        <p data-en="Discover our comprehensive range" data-zh="探索我们的全面产品系列" data-ko="포괄적인 제품 系列을 탐색하세요" data-ja="豊富な製品ラインアップをご紹介">Discover our comprehensive range</p>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="pc">
+        <!-- Category Sidebar -->
+        <div class="ps">
+            <div class="cl">
+                <div class="ci active" data-cat="api" onclick="showCat('api')">
+                    <div class="cii">💊</div>
+                    <div>
+                        <div class="cih" data-en="API" data-zh="原料药" data-ko="원료약" data-ja="原薬">API</div>
+                        <div class="cip" data-en="Active Pharmaceutical" data-zh="活性制药" data-ko="활성 의약품" data-ja="活性医薬">Active Pharmaceutical</div>
+                    </div>
+                </div>
+                <div class="ci" data-cat="biosimilar" onclick="showCat('biosimilar')">
+                    <div class="cii">🧬</div>
+                    <div>
+                        <div class="cih" data-en="Biosimilar" data-zh="生物类似药" data-ko="바이오시밀러" data-ja="バイオシミラー">Biosimilar</div>
+                        <div class="cip" data-en="Biotechnology-based" data-zh="生物技术" data-ko="생물공학 기반" data-ja="バイオテクノロジー">Biotechnology-based</div>
+                    </div>
+                </div>
+                <div class="ci" data-cat="cosmetic" onclick="showCat('cosmetic')">
+                    <div class="cii">✨</div>
+                    <div>
+                        <div class="cih" data-en="Cosmetic" data-zh="化妆品原料" data-ko="화장품" data-ja="化粧品">Cosmetic</div>
+                        <div class="cip" data-en="Premium Raw Materials" data-zh="优质原料" data-ko="프리미엄 원료" data-ja="プレミアム原料">Premium Raw Materials</div>
+                    </div>
+                </div>
+                <div class="ci" data-cat="intermediates" onclick="showCat('intermediates')">
+                    <div class="cii">⚗️</div>
+                    <div>
+                        <div class="cih" data-en="Intermediates" data-zh="中间体" data-ko="중간체" data-ja="中間体">Intermediates</div>
+                        <div class="cip" data-en="Pharmaceutical" data-zh="制药" data-ko="의약품" data-ja="医薬品">Pharmaceutical</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product List -->
+        <div class="pm" id="pl">
+            <div class="es">
+                <h3 data-en="Select a Category" data-zh="选择类别" data-ko="카테고리 선택" data-ja="カテゴリーを選択">Select a Category</h3>
+                <p data-en="Click on a product category" data-zh="点击产品类别" data-ko="제품 카테고리를 클릭하세요" data-ja="製品カテゴリーをクリック">Click on a product category</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer - Same as index -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="margin-bottom: 10px;">
+                        <img src="logo.png" alt="Aurun International" style="height: 45px;">
+                    </div>
+                    <div style="font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 3px;" data-en="Aurun International" data-zh="Aurun International" data-ko="Aurun International" data-ja="Aurun International">Aurun International</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.7);" data-en="Singapore Pte. Ltd." data-zh="新加坡私人有限公司" data-ko="Singapore Pte. Ltd." data-ja="Singapore Pte. Ltd.">Singapore Pte. Ltd.</div>
+                    <p data-en="Based in Singapore, we provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets." data-zh="总部位于新加坡，我们为生物制药行业提供一站式项目与市场解决方案，连接优质制造资源与下游市场。" data-ko="싱가포르에 본사를 두고 있으며, 생물 제약 업계에 원스톱 프로젝트 및 시장 솔루션을 제공하여 고품질 제조 자원을 하류 시장과 연결합니다." data-ja="シンガポールに本社を置き、バイオ製薬業界にワンストップのプロジェクト・市場ソリューションを提供し、高品質な製造リソースを下流市場につなげます。">Based in Singapore, we provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets.</p>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Quick Links" data-zh="快速链接" data-ko="빠른 링크" data-ja="クイックリンク">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html?lang=XXX#home" data-en="Home" data-zh="首页" data-ko="홈" data-ja="ホーム">Home</a></li>
+                        <li><a href="index.html?lang=XXX#about" data-en="About Us" data-zh="关于我们" data-ko="회사 소개" data-ja="会社概要">About Us</a></li>
+                        <li><a href="index.html?lang=XXX#products" data-en="Our Business" data-zh="核心业务" data-ko="핵심 비즈니스" data-ja="コアビジネス">Our Business</a></li>
+                        <li><a href="index.html?lang=XXX#contact" data-en="Contact" data-zh="联系我们" data-ko="문의" data-ja="お問い合わせ">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Products" data-zh="产品" data-ko="제품" data-ja="製品">Products</div>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=api&lang=XXX" data-en="API" data-zh="原料药" data-ko="원료약" data-ja="原薬">API</a></li>
+                        <li><a href="products.html?category=biosimilar&lang=XXX" data-en="Biosimilar" data-zh="生物类似药" data-ko="바이오시밀러" data-ja="バイオシミラー">Biosimilar</a></li>
+                        <li><a href="products.html?category=cosmetic&lang=XXX" data-en="Cosmetic" data-zh="化妆品原料" data-ko="화장품" data-ja="化粧品">Cosmetic</a></li>
+                        <li><a href="products.html?category=intermediates&lang=XXX" data-en="Intermediates" data-zh="中间体" data-ko="중간체" data-ja="中間体">Intermediates</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Contact" data-zh="联系" data-ko="문의" data-ja="お問い合わせ">Contact</div>
+                    <ul class="footer-links">
+                        <li><a href="mailto:ars02@aurunint.com">ars02@aurunint.com</a></li>
+                        <li><a href="https://www.aurunint.com">www.aurunint.com</a></li>
+                        <li data-en="Singapore" data-zh="新加坡" data-ko="싱가포르" data-ja="シンガポール">Singapore</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span data-en="© 2026 Aurun International Singapore Pte. Ltd. All rights reserved." data-zh="© 2026 Aurun International Singapore Pte. Ltd. 保留所有权利。" data-ko="© 2026 Aurun International Singapore Pte. Ltd. 모든 권리 보유." data-ja="© 2026 Aurun International Singapore Pte. Ltd. All rights reserved.">© 2026 Aurun International Singapore Pte. Ltd. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <div class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+    
+    <script>
+        // Product Data
+        const PD={"api": [{"name": "Alfacalcidol", "name_cn": "阿法骨化醇", "cas": "41294-56-8"}, {"name": "Amenamevi", "name_cn": "阿莫奈韦", "cas": "41301-32-4"}, {"name": "Anidulafungin", "name_cn": "阿尼芬净", "cas": "66663-25-8"}, {"name": "Apalutamide", "name_cn": "阿帕他胺", "cas": "56104-40-8"}, {"name": "Apixaban", "name_cn": "阿哌沙班", "cas": "503612-47-3"}, {"name": "Apremilast", "name_cn": "阿普斯特", "cas": "08141-41-9"}, {"name": "Atorvastatin Calcium", "name_cn": "阿克伐他汀钙", "cas": "34523-03-8"}, {"name": "Avibactam Sodium", "name_cn": "阿维巴坦钠", "cas": "92491-61-4"}, {"name": "Berberine HCI", "name_cn": "盐酸小璧碱", "cas": ""}, {"name": "Betulinic Acid", "name_cn": "白桦脂酸", "cas": ""}, {"name": "BictegavirSodium", "name_cn": "比克蔷拉韦铀", "cas": "07988-02-8"}, {"name": "Bomelain", "name_cn": "菠萝蛋白酶", "cas": "9001-00-7"}, {"name": "Ca L-5-Methyltetrahydrofolate", "name_cn": "甲基四氢叶酸铝", "cas": "51533-22-1"}, {"name": "Calcipotriol Monohydrate", "name_cn": "卡泊醇一水化物", "cas": "47657-22-5"}, {"name": "Carvedilol", "name_cn": "卡维地茜", "cas": "72956-09-3"}, {"name": "Ceftazidime+Avibactam", "name_cn": "头孢他啶阿维巴坦", "cas": "72558-82-8"}, {"name": "Ceftriaxone Sodium", "name_cn": "头孢曲松钠", "cas": "74578-49-4"}, {"name": "Celecoxib", "name_cn": "塞来昔布", "cas": "69590-42-5"}, {"name": "Conjugated Estrogens", "name_cn": "共轭雌激素", "cas": "12126-59-9"}, {"name": "Dasatinib Monohydrate", "name_cn": "达沙替尼一水合物", "cas": "63127-77-9"}, {"name": "Diosmin", "name_cn": "地奥司明", "cas": "08141-41-9"}, {"name": "Dydrogesterone", "name_cn": "地屈孕酮", "cas": ""}, {"name": "Emodepside", "name_cn": "艾默德斯", "cas": "55030-63-0"}, {"name": "Empagliflozin", "name_cn": "恩格列净", "cas": "64070-44-0"}, {"name": "Epothilone B", "name_cn": "埃博霉素B", "cas": "52044-54-7"}, {"name": "Etoposide", "name_cn": "依托泊苷", "cas": "33419-42-0"}, {"name": "Ezetimibe", "name_cn": "依折麦布", "cas": "63222-33-1"}, {"name": "Fenbendazole", "name_cn": "芬苯达唑", "cas": "43210-67-9"}, {"name": "Flumazenil", "name_cn": "氟马西尼", "cas": "78755-81-4"}, {"name": "Fusidic Acid", "name_cn": "夫西地酸", "cas": "6990-06-3"}, {"name": "Gadoxetate Disodium", "name_cn": "钆塞酸二钠", "cas": "35326-22-6"}, {"name": "Heparin Sodium", "name_cn": "肝素钠", "cas": "9041-08-1"}, {"name": "Istradefylline", "name_cn": "伊曲茶碱", "cas": "55270-99-8"}, {"name": "Itopride HCI", "name_cn": "伊托必利", "cas": "22892-31-3"}, {"name": "Ivermectin", "name_cn": "伊维菌素", "cas": "70288-86-7"}, {"name": "Liraglutide", "name_cn": "利拉鲁肽", "cas": "04656-20-2"}, {"name": "Melatonin", "name_cn": "褪黑素", "cas": ""}, {"name": "Methylcobalamin", "name_cn": "甲钴胺", "cas": "13422-55-4"}, {"name": "Naproxen", "name_cn": "萘普生", "cas": "22204-53-1"}, {"name": "Nefopam Hydrochloride", "name_cn": "盐酸奈福泮", "cas": "23327-57-3"}, {"name": "Nicardipine Hydrochloride", "name_cn": "盐酸尼卡地平", "cas": "54527-84-3"}, {"name": "Nifedipine", "name_cn": "硝苯地平", "cas": "21829-25-4"}, {"name": "Norepinephrine Bitartrate", "name_cn": "重酒石酸去甲肾上腺素", "cas": ""}, {"name": "Posaconazole", "name_cn": "泊沙康唑", "cas": "71228-49-2"}, {"name": "Pyridoxal 5-phosphate", "name_cn": "磷酸吡哆醛", "cas": ""}, {"name": "Pyridoxine Hydrochloride", "name_cn": "维生素B6", "cas": ""}, {"name": "Quercetin", "name_cn": "槲皮素", "cas": ""}, {"name": "Ropivacaine Hydrochloride", "name_cn": "盐酸罗哌卡因", "cas": "98717-15-8"}, {"name": "Rosuvastatin Calcium", "name_cn": "瑞舒伐他汀钙", "cas": "47098-20-2"}, {"name": "Sacubitril Sodium", "name_cn": "沙库比曲钠", "cas": "49690-05-1"}, {"name": "Sacubitril Valsartan Sodium", "name_cn": "沙库比曲缬沙坦钠", "cas": "36623-90-4"}, {"name": "Sarecycline", "name_cn": "萨瑞环素", "cas": "35654-66-0"}, {"name": "Semaglutide", "name_cn": "司美格鲁肽", "cas": "10463-68-2"}, {"name": "Sildenafil Citrate", "name_cn": "枸橼酸西地那非", "cas": "71599-83-0"}, {"name": "Simethicone 30%", "name_cn": "西甲硅油", "cas": "8050-81-5"}, {"name": "Simvastatin", "name_cn": "辛伐他汀", "cas": "79902-63-9"}, {"name": "Sitagliptin", "name_cn": "西格列汀", "cas": "86460-32-6"}, {"name": "Sitagliptin Hydrochloride", "name_cn": "西格列汀盐酸盐", "cas": "86459-71-6"}, {"name": "Sodium Fusidate", "name_cn": "夫西地酸钠", "cas": ""}, {"name": "Sofosbuvir", "name_cn": "索非布韦", "cas": "90307-88-0"}, {"name": "Sugammadex Sodium", "name_cn": "舒更葡糖钠", "cas": "43306-79-6"}, {"name": "Thaumatin", "name_cn": "索马甜", "cas": "53850-34-3"}, {"name": "Tigecycline", "name_cn": "替加环素", "cas": "20620-09-7"}, {"name": "Tirzepatide", "name_cn": "替尔泊肽", "cas": "23788-19-2"}, {"name": "Tofacitinib", "name_cn": "托法替尼", "cas": "77600-75-2"}, {"name": "Tofacitinib Citrate", "name_cn": "枸橼酸托法替尼", "cas": "41678-49-5"}, {"name": "Upadacitinib Hemihydrate", "name_cn": "乌帕替尼半水合物", "cas": "50057-56-0"}, {"name": "Valsartan", "name_cn": "缬沙坦", "cas": "37862-53-4"}, {"name": "VD3", "name_cn": "维生素D3", "cas": ""}, {"name": "Velpatasvir", "name_cn": "维帕他韦", "cas": "77049-84-7"}, {"name": "Vonoprazan", "name_cn": "伏诺拉赞", "cas": "60141-27-2"}], "biosimilar": [{"name": "Ansamitocin P-3", "name_cn": "安斯菌素P-3", "cas": "66584-72-3"}, {"name": "DM1", "name_cn": "DM1", "cas": "39504-50-0"}, {"name": "Exatecan mesylate", "name_cn": "甲磺酸艾喜替康", "cas": "69869-90-3"}, {"name": "Deruxtecan", "name_cn": "德卢替康", "cas": "99440-13-7"}, {"name": "Eribulin Mesilate", "name_cn": "甲磺酸艾瑞布林", "cas": "41045-17-6"}, {"name": "Lurbinectedin", "name_cn": "芦比替定", "cas": "97871-47-3"}, {"name": "SN-38", "name_cn": "SN-38", "cas": "86639-52-3"}, {"name": "MMAE", "name_cn": "单甲基澳瑞他汀E", "cas": "74645-27-7"}, {"name": "MMAF", "name_cn": "单甲基澳瑞他汀F", "cas": "45017-94-1"}, {"name": "Calicheamicin", "name_cn": "卡里奇霉素", "cas": "08212-75-5"}, {"name": "N-Acetyl-Calicheamicin", "name_cn": "N-乙酰基卡里奇霉素", "cas": "08212-76-6"}, {"name": "DMF (Total)", "name_cn": "药物主文件总览", "cas": ""}, {"name": "Pembrolizumab", "name_cn": "帕博利珠单抗", "cas": ""}, {"name": "Nivolumab", "name_cn": "纳武利尤单抗", "cas": ""}, {"name": "Trastuzumab", "name_cn": "曲妥珠单抗", "cas": ""}, {"name": "Tocilizumab", "name_cn": "托珠单抗", "cas": ""}, {"name": "Denosumab", "name_cn": "地舒单抗", "cas": ""}, {"name": "Ustekinumab", "name_cn": "乌司奴单抗", "cas": ""}, {"name": "Aflibercept", "name_cn": "阿柏西普", "cas": ""}, {"name": "Cetuximab", "name_cn": "西妥昔单抗", "cas": ""}, {"name": "Rituximab", "name_cn": "利妥昔单抗", "cas": ""}, {"name": "Bevacizumab", "name_cn": "贝伐珠单抗", "cas": ""}, {"name": "Adalimumab", "name_cn": "阿达木单抗", "cas": ""}, {"name": "Atezolizumab", "name_cn": "阿替利珠单抗", "cas": ""}, {"name": "Dulaglutide", "name_cn": "度拉糖肽", "cas": ""}, {"name": "Eculizumab", "name_cn": "依库丽单抗", "cas": ""}, {"name": "Trastuzumab-Deruxtecan", "name_cn": "德曲妥珠单抗", "cas": ""}, {"name": "Pertuzumab", "name_cn": "帕妥珠单抗", "cas": ""}, {"name": "Ipilimumab", "name_cn": "伊匹木单抗", "cas": ""}, {"name": "Tezepelumab", "name_cn": "特泽鲁单抗", "cas": ""}, {"name": "Faricimab", "name_cn": "法瑞西单抗", "cas": ""}, {"name": "Romosozumab", "name_cn": "罗莫单抗", "cas": ""}, {"name": "Omalizumab", "name_cn": "奥马珠单抗", "cas": ""}, {"name": "Daratumumab", "name_cn": "达雷木单抗", "cas": ""}, {"name": "Lecanemab", "name_cn": "仑卡奈单抗", "cas": ""}, {"name": "Trastuzumab-Emtansine", "name_cn": "恩美曲妥珠单抗", "cas": ""}, {"name": "Dupilumab", "name_cn": "度匹单抗", "cas": ""}, {"name": "Alirocumab", "name_cn": "阿利库单抗", "cas": ""}, {"name": "Secukinumab", "name_cn": "司库奇尤单抗", "cas": ""}, {"name": "Ramucirumab", "name_cn": "雷莫芦单抗", "cas": ""}, {"name": "Evolocumab", "name_cn": "依伏库单抗", "cas": ""}, {"name": "Risankizumab", "name_cn": "瑞莎珠单抗", "cas": ""}], "cosmetic": [{"name": "Alpha Lipoic Acid", "name_cn": "α-硫辛酸", "cas": "1077-28-7"}, {"name": "Ascorbyl Glucoside", "name_cn": "抗坏血酸葡糖苷", "cas": ""}, {"name": "Astaxanthin", "name_cn": "虾青素", "cas": "472-61-7"}, {"name": "Beta-Glucan", "name_cn": "β-葡聚糖", "cas": ""}, {"name": "Coenzyme Q10", "name_cn": "辅酶Q10", "cas": "303-98-0"}, {"name": "Ectoin", "name_cn": "依克多因", "cas": "96702-03-3"}, {"name": "GABA", "name_cn": "γ-氨基丁酸", "cas": "56-12-5"}, {"name": "Glutathione", "name_cn": "谷胱甘肽", "cas": "70-18-8"}, {"name": "Hyaluronic Acid", "name_cn": "透明质酸", "cas": "9004-61-9"}, {"name": "L-Glutathione Reduced", "name_cn": "还原型谷胱甘肽", "cas": "70-18-8"}, {"name": "Madecassoside", "name_cn": "羟基积雪草苷", "cas": "34540-22-2"}, {"name": "Niacinamide", "name_cn": "烟酰胺", "cas": "98-92-0"}, {"name": "Palmitoyl Tripeptide-1", "name_cn": "棕榈酰三肽-1", "cas": ""}, {"name": "Palmitoyl Tetrapeptide-7", "name_cn": "棕榈酰四肽-7", "cas": ""}, {"name": "Propanediol", "name_cn": "丙二醇", "cas": "504-63-2"}, {"name": "Resveratrol", "name_cn": "白藜芦醇", "cas": "501-36-0"}, {"name": "Retinol", "name_cn": "视黄醇", "cas": "68-26-8"}, {"name": "Saccharide Isomerate", "name_cn": "糖类同分异构体", "cas": ""}, {"name": "Squalane", "name_cn": "角鲨烷", "cas": "111-01-3"}, {"name": "Tocopherol (Vitamin E)", "name_cn": "生育酚", "cas": "1406-66-2"}], "intermediates": [{"name": "6-Chloropurine", "name_cn": "6-氯嘌呤", "cas": "87-60-5"}, {"name": "Boc-L-Azidoalanine", "name_cn": "Boc-L-叠氮丙氨酸", "cas": "1374347-36-6"}, {"name": "Carbobenzoxy-L-lysine", "name_cn": "苄氧羰基-L-赖氨酸", "cas": "3724-43-4"}, {"name": "D-Mannitol", "name_cn": "甘露醇", "cas": "69-65-8"}, {"name": "Diethyl Malonate", "name_cn": "丙二酸二乙酯", "cas": "105-53-3"}, {"name": "Ethyl 4-chloro-4-oxobutyrate", "name_cn": "4-氯-4-氧代丁酸乙酯", "cas": "31546-31-7"}, {"name": "Fmoc-L-Azidoalanine", "name_cn": "Fmoc-L-叠氮丙氨酸", "cas": "152120-54-4"}, {"name": "Glycine Methyl Ester", "name_cn": "甘氨酸甲酯", "cas": "38234-21-8"}, {"name": "H-L-Orn(Boc)-OH", "name_cn": "H-L-Orn(Boc)-OH", "cas": "3300-34-5"}, {"name": "L-Azetidine-2-carboxylic Acid", "name_cn": "L-氮杂环丁烷-2-羧酸", "cas": "21352-22-7"}, {"name": "L-Cysteine Methyl Ester", "name_cn": "L-半胱氨酸甲酯", "cas": "3724-43-4"}, {"name": "Methyl 2-chloro-2-oxoacetate", "name_cn": "氯乙醛酸甲酯", "cas": "3544-35-2"}, {"name": "Methyl 4-nitrobenzoate", "name_cn": "对硝基苯甲酸甲酯", "cas": "619-50-1"}, {"name": "N-Boc-3-pyrrolidinone", "name_cn": "N-Boc-3-吡咯烷酮", "cas": "195456-21-1"}, {"name": "Phenylboronic Acid", "name_cn": "苯硼酸", "cas": "98-80-6"}, {"name": "Pivalic Acid", "name_cn": "特戊酸", "cas": "75-98-9"}, {"name": "Pyridine-3-boronic Acid", "name_cn": "吡啶-3-硼酸", "cas": "1692-15-5"}, {"name": "Sodium Azide", "name_cn": "叠氮化钠", "cas": "26628-22-8"}, {"name": "Tetrabutylammonium Bromide", "name_cn": "四丁基溴化铵", "cas": "1643-19-2"}, {"name": "Trifluoroacetic Acid", "name_cn": "三氟乙酸", "cas": "76-05-1"}]};
+        
+        // Config
+        const PG = 20;
+        let currentPage = 1;
+        let currentCategory = 'api';
+        let currentLang = 'en';
+        
+        // Labels
+        const LD = {
+            en: {t:'Products', s:'Select', tot:'Total', p:'Page', of:'of', search:'Search', selectCat:'Select a Category', clickCat:'Click on a product category'},
+            zh: {t:'产品', s:'选择', tot:'共', p:'第', of:'页', search:'搜索', selectCat:'选择类别', clickCat:'点击产品类别'},
+            ko: {t:'제품', s:'카테고리', tot:'총', p:'페이지', of:'/', search:'검색', selectCat:'카테고리 선택', clickCat:'제품 카테고리를 클릭하세요'},
+            ja: {t:'製品', s:'選択', tot:'合計', p:'ページ', of:'/', search:'検索', selectCat:'カテゴリーを選択', clickCat:'製品カテゴリーをクリック'}
+        };
+        
+        // Category Names
+        const CT = {
+            api: {en:'API',zh:'原料药',ko:'원료약',ja:'原薬'},
+            biosimilar: {en:'Biosimilar',zh:'生物类似药',ko:'바이오시밀러',ja:'バイオシミラー'},
+            cosmetic: {en:'Cosmetic',zh:'化妆品原料',ko:'화장품',ja:'化粧品原料'},
+            intermediates: {en:'Intermediates',zh:'中间体',ko:'중간체',ja:'中間体'}
+        };
+        
+        // Get URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const urlCat = urlParams.get('category') || 'api';
+        const urlPage = parseInt(urlParams.get('page')) || 1;
+        
+        // Language Switching - Same as index.html
+        const langLinks = document.querySelectorAll('.lang-bar a');
+        
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('aurun_lang', lang);
+            
+            // Update URL
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('lang', lang);
+            window.history.pushState({}, '', newUrl);
+            
+            // Update language bar
+            langLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.lang === lang);
+            });
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                el.textContent = el.dataset[lang];
+            });
+            
+            // Update all links with currentLang
+            document.querySelectorAll('a[href*="lang=XXX"]').forEach(link => {
+                let href = link.getAttribute('href');
+                href = href.replace('lang=XXX', 'lang=' + currentLang);
+                link.setAttribute('href', href);
+            });
+            
+            // Refresh product list
+            if (PD[currentCategory]) {
+                showCat(currentCategory, currentPage);
+            }
+        }
+        
+        langLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.dataset.lang);
+            });
+        });
+        
+        // Initialize language from localStorage or URL
+        function initLang() {
+            // First check localStorage
+            const savedLang = localStorage.getItem('aurun_lang');
+            if (savedLang && ['en','zh','ko','ja'].includes(savedLang)) {
+                currentLang = savedLang;
+            } else if (urlLang && ['en','zh','ko','ja'].includes(urlLang)) {
+                // Fallback to URL param
+                currentLang = urlLang;
+                localStorage.setItem('aurun_lang', currentLang);
+            }
+            
+            // Set active class
+            langLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.lang === currentLang);
+            });
+            
+            // Apply translations
+            document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
+                el.textContent = el.dataset[currentLang];
+            });
+            
+            // Add lang param to index links
+            document.querySelectorAll('a[href^="index.html"]').forEach(link => {
+                let href = link.getAttribute('href');
+                href = href.replace('lang=XXX', 'lang=' + currentLang);
+                link.setAttribute('href', href);
+            });
+        }
+        
+        // Show Category
+        function showCat(cat, page, searchTerm) {
+            if (searchTerm === undefined) {
+                const searchInput = document.getElementById('search-input');
+                searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : '';
+            }
+            
+            currentCategory = cat;
+            currentPage = page || 1;
+            
+            // Update URL
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('category', cat);
+            newUrl.searchParams.set('page', page);
+            newUrl.searchParams.set('lang', currentLang);
+            window.history.pushState({}, '', newUrl);
+            
+            // Update sidebar active state
+            document.querySelectorAll('.ci').forEach(ci => ci.classList.remove('active'));
+            document.querySelector('[data-cat="' + cat + '"]').classList.add('active');
+            
+            // Filter products
+            let products = PD[cat];
+            if (searchTerm) {
+                products = products.filter(item => 
+                    (item.name && item.name.toLowerCase().includes(searchTerm)) ||
+                    (item.name_cn && item.name_cn.toLowerCase().includes(searchTerm)) ||
+                    (item.cas && item.cas.includes(searchTerm))
+                );
+            }
+            
+            // Pagination
+            const totalPages = Math.ceil(products.length / PG);
+            const start = (currentPage - 1) * PG;
+            const end = start + PG;
+            const pageProducts = products.slice(start, end);
+            
+            // Get category label
+            const catLabel = CT[cat] ? CT[cat][currentLang] : cat.toUpperCase();
+            
+            // Build HTML
+            const langData = LD[currentLang];
+            let html = '<h2>' + catLabel + ' ' + langData.t + '</h2>';
+            
+            // Search box with translations
+            html += '<div class="search-box">';
+            html += '<input type="text" id="search-input" placeholder="' + (currentLang === 'zh' ? '搜索产品...' : currentLang === 'ko' ? '제품 검색...' : currentLang === 'ja' ? '製品を検索...' : 'Search products...') + '" value="' + searchTerm + '" onkeyup="if(event.key==\'Enter\')showCat(\'' + cat + '\',1,this.value)">';
+            html += '<button onclick="showCat(\'' + cat + '\',1,document.getElementById(\'search-input\').value)">' + langData.search + '</button>';
+            html += '</div>';
+            
+            html += '<p>' + langData.tot + ': ' + products.length + ' ' + langData.t + '</p>';
+            
+            // Table
+            html += '<table class="pt"><thead><tr><th style="width:50px">No.</th><th>Product Name</th><th>Chinese</th><th style="width:140px">CAS No.</th></tr></thead><tbody>';
+            
+            for (let i = 0, num = start + 1; i < pageProducts.length; i++, num++) {
+                html += '<tr><td>' + num + '</td><td><b>' + pageProducts[i].name + '</b></td><td>' + (pageProducts[i].name_cn || '-') + '</td><td>' + (pageProducts[i].cas || '-') + '</td></tr>';
+            }
+            
+            html += '</tbody></table>';
+            
+            // Pagination
+            if (totalPages > 1) {
+                html += '<div class="pg">';
+                if (currentPage > 1) {
+                    html += '<a onclick="showCat(\'' + cat + '\',' + (currentPage - 1) + ',\'' + searchTerm + '\')">← Prev</a>';
+                }
+                html += '<span>' + langData.p + ' ' + currentPage + ' ' + langData.of + ' ' + totalPages + '</span>';
+                if (currentPage < totalPages) {
+                    html += '<a onclick="showCat(\'' + cat + '\',' + (currentPage + 1) + ',\'' + searchTerm + '\')">Next →</a>';
+                }
+                html += '</div>';
+            }
+            
+            document.getElementById('pl').innerHTML = html;
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initLang();
+            if (PD[urlCat]) {
+                showCat(urlCat, urlPage);
+            }
+        });
+    </script>
+</body>
+</html>

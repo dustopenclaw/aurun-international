@@ -1,0 +1,1950 @@
+{
+  "api": [
+    {
+      "name": "Alfacalcidol",
+      "name_cn": "阿法骨化醇",
+      "cas": "41294-56-8"
+    },
+    {
+      "name": "Amenamevi",
+      "name_cn": "阿莫奈韦",
+      "cas": "41301-32-4"
+    },
+    {
+      "name": "Anidulafungin",
+      "name_cn": "阿尼芬争",
+      "cas": "66663-25-8"
+    },
+    {
+      "name": "Apalutamide",
+      "name_cn": "阿帕他肢",
+      "cas": "56104-40-8"
+    },
+    {
+      "name": "Apixaban",
+      "name_cn": "阿眼沙班",
+      "cas": "03612-47-3"
+    },
+    {
+      "name": "Apremilast",
+      "name_cn": "阿普斯特",
+      "cas": "08141-41-9"
+    },
+    {
+      "name": "Atorvastatin Calcium",
+      "name_cn": "阿克伐他汀钙",
+      "cas": "34523-03-8"
+    },
+    {
+      "name": "Avibactam Sodium",
+      "name_cn": "阿维巴坦铀",
+      "cas": "92491-61-4"
+    },
+    {
+      "name": "Berberine HCI",
+      "name_cn": "盐酸小璧碱",
+      "cas": ""
+    },
+    {
+      "name": "Betulinic Acid",
+      "name_cn": "白桦脂酸",
+      "cas": ""
+    },
+    {
+      "name": "BictegavirSodium",
+      "name_cn": "比克蔷拉韦铀",
+      "cas": "07988-02-8"
+    },
+    {
+      "name": "Bomelain",
+      "name_cn": "菠萝蛋白酶",
+      "cas": "9001-00-7"
+    },
+    {
+      "name": "Ca L-5-Methyltetrahydrofolate (Folate)",
+      "name_cn": "甲基四氢叶酸铝",
+      "cas": "51533-22-1"
+    },
+    {
+      "name": "Calcipotriol Monohydrate",
+      "name_cn": "卡泊醇一水化物",
+      "cas": "47657-22-5"
+    },
+    {
+      "name": "Carvedilol",
+      "name_cn": "卡维地茜",
+      "cas": "72956-09-3"
+    },
+    {
+      "name": "Ceftazidime+Avibactam",
+      "name_cn": "头抱他走阿维巴坦复合",
+      "cas": "72558-82-8"
+    },
+    {
+      "name": "头J扭曲松铀",
+      "name_cn": "头扭曲松铀",
+      "cas": "04376-79-6"
+    },
+    {
+      "name": "Celecoxib",
+      "name_cn": "塞来音布",
+      "cas": "69590-42-5"
+    },
+    {
+      "name": "Conjugated Estrogens",
+      "name_cn": "共辄雌激素",
+      "cas": "12126-59-9"
+    },
+    {
+      "name": "Dasatinib Monohydrate",
+      "name_cn": "达沙蔷尼一水合物",
+      "cas": "63127-77-9"
+    },
+    {
+      "name": "Diosmin",
+      "name_cn": "地奥司明",
+      "cas": "08141-41-9"
+    },
+    {
+      "name": "Dydrogesterone",
+      "name_cn": "地屈孕酣",
+      "cas": ""
+    },
+    {
+      "name": "Emodepside",
+      "name_cn": "艾默德斯",
+      "cas": "55030-63-0"
+    },
+    {
+      "name": "Empagliflozin",
+      "name_cn": "恩格列净",
+      "cas": "64070-44-0"
+    },
+    {
+      "name": "Epothilone B",
+      "name_cn": "埃博霉素",
+      "cas": "52044-54-7"
+    },
+    {
+      "name": "Etoposide",
+      "name_cn": "依托自昔",
+      "cas": "33419-42-0"
+    },
+    {
+      "name": "Ezetimibe",
+      "name_cn": "依折麦布",
+      "cas": "63222-33-1"
+    },
+    {
+      "name": "Fenbendazole",
+      "name_cn": "芬苯达瞠",
+      "cas": "43210-67-9"
+    },
+    {
+      "name": "Flumazenil",
+      "name_cn": "氟马西尼",
+      "cas": "78755-81-4"
+    },
+    {
+      "name": "Fusidic Acid",
+      "name_cn": "夫西地酸",
+      "cas": "6990-06-3"
+    },
+    {
+      "name": "Gadoxetate Disodium",
+      "name_cn": "号塞酸二铀",
+      "cas": "35326-22-6"
+    },
+    {
+      "name": "Heparin Sodium",
+      "name_cn": "肝素铀",
+      "cas": "9041-08-1"
+    },
+    {
+      "name": "lstradefylline",
+      "name_cn": "伊曲荼碱",
+      "cas": "55270-99-8"
+    },
+    {
+      "name": "ltopride HCI",
+      "name_cn": "伊托店利",
+      "cas": "22892-31-3"
+    },
+    {
+      "name": "lvermectin",
+      "name_cn": "尹维菌素",
+      "cas": "70288-86-7"
+    },
+    {
+      "name": "Liraglutide",
+      "name_cn": "利拉鲁肤",
+      "cas": "04656-20-2"
+    },
+    {
+      "name": "Melatonin",
+      "name_cn": "褪黑素",
+      "cas": ""
+    },
+    {
+      "name": "Methylcobalamin (B 12)",
+      "name_cn": "甲钻肢",
+      "cas": "13422-55-4"
+    },
+    {
+      "name": "Naproxen",
+      "name_cn": "荼蔷生",
+      "cas": "22204-53-1"
+    },
+    {
+      "name": "Nefopam Hydrochloride",
+      "name_cn": "盐酸奈福半",
+      "cas": "23327-57-3"
+    },
+    {
+      "name": "Nicardipin Hydrochloride",
+      "name_cn": "盐酸尼卡地平",
+      "cas": "54527-84-3"
+    },
+    {
+      "name": "Nifedipine",
+      "name_cn": "硝苯地平",
+      "cas": "21829-25-4"
+    },
+    {
+      "name": "重酒石酸去甲肾上眼素",
+      "name_cn": "时",
+      "cas": ""
+    },
+    {
+      "name": "Posaconazole",
+      "name_cn": "泪沙康瞠",
+      "cas": "71228-49-2"
+    },
+    {
+      "name": "Pyridoxal 5-phosphate",
+      "name_cn": "衍生物",
+      "cas": ""
+    },
+    {
+      "name": "Pyridoxine Hydrochl。ride (86)",
+      "name_cn": "维主素",
+      "cas": ""
+    },
+    {
+      "name": "Quercetin",
+      "name_cn": "剥皮素",
+      "cas": ""
+    },
+    {
+      "name": "Ropivacaine Hydrochloride",
+      "name_cn": "盐酸罗眠卡因",
+      "cas": "98717-15-8"
+    },
+    {
+      "name": "Rosuvastatin Calcium",
+      "name_cn": "瑞舒伐他汀铝",
+      "cas": "47098-20-2"
+    },
+    {
+      "name": "Sacubitril Sodium",
+      "name_cn": "沙库巴由铀",
+      "cas": "49690-05-1"
+    },
+    {
+      "name": "Sacubitril Valsa叫an Sodium",
+      "name_cn": "叫",
+      "cas": "36623-90-4"
+    },
+    {
+      "name": "Sarecycline",
+      "name_cn": "萨瑞环素",
+      "cas": "35654-66-0"
+    },
+    {
+      "name": "Semaglutide",
+      "name_cn": "索马鲁肤",
+      "cas": "10463-68-2"
+    },
+    {
+      "name": "Sildenafil Citrate",
+      "name_cn": "相梅酸西地那非",
+      "cas": "71599-83-0"
+    },
+    {
+      "name": "Simethicone 30%",
+      "name_cn": "西甲硅油",
+      "cas": "8050-81-5"
+    },
+    {
+      "name": "Si盯wastatin",
+      "name_cn": "盯",
+      "cas": "79902-63-9"
+    },
+    {
+      "name": "Sitagliptin",
+      "name_cn": "西他列汀",
+      "cas": "86460-32-6"
+    },
+    {
+      "name": "Sitagliptin Hydrochloride",
+      "name_cn": "西他列汀盐酸盐",
+      "cas": "86459-71-6"
+    },
+    {
+      "name": "Sodium Fusidate",
+      "name_cn": "夫西地酸铀",
+      "cas": ""
+    },
+    {
+      "name": "Sofosbuvir",
+      "name_cn": "索非布韦",
+      "cas": "90307-88-0"
+    },
+    {
+      "name": "Sugammadex Sodium",
+      "name_cn": "舒重葡糖纳",
+      "cas": "43306-79-6"
+    },
+    {
+      "name": "Thaumatin",
+      "name_cn": "索马甜",
+      "cas": "53850-34-3"
+    },
+    {
+      "name": "Tigecycline",
+      "name_cn": "蔷加环素",
+      "cas": "20620-09-7"
+    },
+    {
+      "name": "Tirzepatide",
+      "name_cn": "蔷尔自太",
+      "cas": "23788-19-2"
+    },
+    {
+      "name": "Tofacitinib",
+      "name_cn": "托法苔尼",
+      "cas": "77600-75-2"
+    },
+    {
+      "name": "Tofacitinib Citrate",
+      "name_cn": "相梅酸托法蔷尼",
+      "cas": "41678-49-5"
+    },
+    {
+      "name": "Upadacitinib Hemihydrate",
+      "name_cn": "马帕蔷尼半合物",
+      "cas": "50057-56-0"
+    },
+    {
+      "name": "Valsartan",
+      "name_cn": "领沙坦",
+      "cas": "37862-53-4"
+    },
+    {
+      "name": "VD30il",
+      "name_cn": "油",
+      "cas": ""
+    },
+    {
+      "name": "Velpatasvi",
+      "name_cn": "维自他韦",
+      "cas": "77049-84-7"
+    },
+    {
+      "name": "Von opazan",
+      "name_cn": "沃诺拉赞",
+      "cas": "60141-27-2"
+    }
+  ],
+  "biosimilar": [
+    {
+      "name": "Ansamitocin P-3 安斯菌素P-",
+      "name_cn": "安斯菌素",
+      "cas": "66584-72-3"
+    },
+    {
+      "name": "DM",
+      "name_cn": "",
+      "cas": "39504-50-0"
+    },
+    {
+      "name": "Exatecan mesylate 甲磺酸依喜苔康",
+      "name_cn": "甲磺酸依喜苔康",
+      "cas": "69869-90-3"
+    },
+    {
+      "name": "Deruxatecan 德鲁番康",
+      "name_cn": "德鲁番康",
+      "cas": "99440-13-7"
+    },
+    {
+      "name": "Eribulin Mesilate 甲磺酸艾瑞布林",
+      "name_cn": "甲磺酸艾瑞布林",
+      "cas": "41045-17-6"
+    },
+    {
+      "name": "Lu rb i nected in 卢比苔丁",
+      "name_cn": "卢比苔丁",
+      "cas": "97871-47-3"
+    },
+    {
+      "name": "SN",
+      "name_cn": "",
+      "cas": "86639-52-3"
+    },
+    {
+      "name": "MMAE 一甲基澳瑞他汀E",
+      "name_cn": "一甲基澳瑞他汀",
+      "cas": "74645-27-7"
+    },
+    {
+      "name": "MMAF 一甲基澳瑞他汀F",
+      "name_cn": "一甲基澳瑞他汀",
+      "cas": "45017-94-1"
+    },
+    {
+      "name": "Calicheamicin 卡里奇霉素",
+      "name_cn": "卡里奇霉素",
+      "cas": "08212-75-5"
+    },
+    {
+      "name": "N-Acetyl-Calicheamicin N－乙酷基卡里\n奇霉素",
+      "name_cn": "乙酷基卡里奇霉素",
+      "cas": "08212-76-6"
+    },
+    {
+      "name": "药物主文件（总览）\nDMFσ。tal)",
+      "name_cn": "药物主文件总览",
+      "cas": ""
+    },
+    {
+      "name": "Pembrolizumab ~自姆单抗",
+      "name_cn": "自姆单抗",
+      "cas": ""
+    },
+    {
+      "name": "Nivolumab纳武单抗",
+      "name_cn": "纳武单抗",
+      "cas": ""
+    },
+    {
+      "name": "Trastuzumab 曲妥珠单抗",
+      "name_cn": "曲妥珠单抗",
+      "cas": ""
+    },
+    {
+      "name": "Tocilizumab托珠单抗",
+      "name_cn": "托珠单抗",
+      "cas": ""
+    },
+    {
+      "name": "Denosumab狄诺塞麦",
+      "name_cn": "狄诺塞麦",
+      "cas": ""
+    },
+    {
+      "name": "Ustekinumab优特克单抗",
+      "name_cn": "优特克单抗",
+      "cas": ""
+    },
+    {
+      "name": "Aflibercept阿怕西普",
+      "name_cn": "阿怕西普",
+      "cas": ""
+    },
+    {
+      "name": "Cetuximab西妥昔单抗",
+      "name_cn": "西妥昔单抗",
+      "cas": ""
+    },
+    {
+      "name": "Rituximab利妥昔单抗",
+      "name_cn": "利妥昔单抗",
+      "cas": ""
+    },
+    {
+      "name": "Bevacizumab 贝伐珠单抗",
+      "name_cn": "贝伐珠单抗",
+      "cas": ""
+    },
+    {
+      "name": "Adalimumab 阿达木单抗",
+      "name_cn": "阿达木单抗",
+      "cas": ""
+    },
+    {
+      "name": "Atezolizumab阿特珠单抗",
+      "name_cn": "阿特珠单抗",
+      "cas": ""
+    },
+    {
+      "name": "Dulaglutide度拉鲁肤",
+      "name_cn": "度拉鲁肤",
+      "cas": ""
+    },
+    {
+      "name": "Eculizumab依库丽单抗",
+      "name_cn": "依库丽单抗",
+      "cas": ""
+    },
+    {
+      "name": "Trastuzunab-\nDeruxtecan德曲要珠单抗",
+      "name_cn": "德曲要珠单抗",
+      "cas": ""
+    },
+    {
+      "name": "Pertuzumab $自妥珠单抗",
+      "name_cn": "自妥珠单抗",
+      "cas": ""
+    },
+    {
+      "name": "lpilimumab伊匹单抗",
+      "name_cn": "伊匹单抗",
+      "cas": ""
+    },
+    {
+      "name": "Tezepelumab特泽鲁单抗",
+      "name_cn": "特泽鲁单抗",
+      "cas": ""
+    },
+    {
+      "name": "Faricimab法瑞西单抗",
+      "name_cn": "法瑞西单抗",
+      "cas": ""
+    },
+    {
+      "name": "Romosozumab罗莫单抗",
+      "name_cn": "罗莫单抗",
+      "cas": ""
+    },
+    {
+      "name": "Omalizumab奥马珠单抗",
+      "name_cn": "奥马珠单抗",
+      "cas": ""
+    },
+    {
+      "name": "Daratumumab达雷木单",
+      "name_cn": "达雷木单",
+      "cas": ""
+    },
+    {
+      "name": "Lecanemab仑卡奈单抗",
+      "name_cn": "仑卡奈单抗",
+      "cas": ""
+    },
+    {
+      "name": "Trastuzunab-Emtanisne\n恩美曲要珠单杭",
+      "name_cn": "恩美曲要珠单杭",
+      "cas": ""
+    },
+    {
+      "name": "Dupilumab度匹鲁单抗",
+      "name_cn": "度匹鲁单抗",
+      "cas": ""
+    },
+    {
+      "name": "Alirocumab阿利库单抗",
+      "name_cn": "阿利库单抗",
+      "cas": ""
+    },
+    {
+      "name": "Se Clkinumab苏金单抗",
+      "name_cn": "苏金单抗",
+      "cas": ""
+    },
+    {
+      "name": "Ramucirumab雷莫芦单",
+      "name_cn": "雷莫芦单",
+      "cas": ""
+    },
+    {
+      "name": "Evolocumab依伏库单抗",
+      "name_cn": "依伏库单抗",
+      "cas": ""
+    },
+    {
+      "name": "Risankizumab RZA瑞莎\n珠单抗",
+      "name_cn": "瑞莎珠单抗",
+      "cas": ""
+    }
+  ],
+  "cosmetic": [
+    {
+      "name": "功姐",
+      "name_cn": "功姐",
+      "cas": ""
+    },
+    {
+      "name": "抗氧化＆抗衰老\nAntioxidant & Anti-\naging",
+      "name_cn": "抗氧化抗衰老",
+      "cas": "1077-28-7"
+    },
+    {
+      "name": "R-( + ）－硫辛酸",
+      "name_cn": "硫辛酸",
+      "cas": "1200-22-2"
+    },
+    {
+      "name": "备脱甘肤",
+      "name_cn": "备脱甘肤",
+      "cas": ""
+    },
+    {
+      "name": "麦角硫因",
+      "name_cn": "麦角硫因",
+      "cas": ""
+    },
+    {
+      "name": "精肢三盐酸盐",
+      "name_cn": "精肢三盐酸盐",
+      "cas": ""
+    },
+    {
+      "name": "自事芦醇",
+      "name_cn": "自事芦醇",
+      "cas": ""
+    },
+    {
+      "name": "番茄红素",
+      "name_cn": "番茄红素",
+      "cas": ""
+    },
+    {
+      "name": "细胞能量代谢\nCellular Enegy\nMetabolism",
+      "name_cn": "细胞能量代谢",
+      "cas": ""
+    },
+    {
+      "name": "还原型 NAD+ (NADH)",
+      "name_cn": "还原型",
+      "cas": ""
+    },
+    {
+      "name": "还原型 NADP+\n(NADPH)",
+      "name_cn": "还原型",
+      "cas": "2646-71-1"
+    },
+    {
+      "name": "NMN （~－烟酷肢单核营\n酸）",
+      "name_cn": "烟酷肢单核营酸",
+      "cas": "1094-61-7"
+    },
+    {
+      "name": "NMNH （还原型β烟酷肢\n单核昔酸）",
+      "name_cn": "还原型烟酷肢单核昔酸",
+      "cas": "08347-85-9"
+    },
+    {
+      "name": "手L{lt累糖（3＇－岩藻糖乳\n糖）",
+      "name_cn": "手累糖岩藻糖乳糖",
+      "cas": "41312-47-4"
+    },
+    {
+      "name": "乳铁蛋白",
+      "name_cn": "乳铁蛋白",
+      "cas": "46897-68-9"
+    },
+    {
+      "name": "辅酶Q10\n还原型辅酶Q",
+      "name_cn": "辅酶还原型辅酶",
+      "cas": ""
+    },
+    {
+      "name": "情绪调节\nMood Regulation",
+      "name_cn": "情绪调节",
+      "cas": "4350-09-8"
+    },
+    {
+      "name": "大麻二酣（不含THC)",
+      "name_cn": "大麻二酣不含",
+      "cas": "13956-29-1"
+    },
+    {
+      "name": "大麻暗酣（不合THC)",
+      "name_cn": "大麻暗酣不合",
+      "cas": "25654-31-3"
+    },
+    {
+      "name": "香料\nFlavor and",
+      "name_cn": "香料",
+      "cas": ""
+    },
+    {
+      "name": "植物提取物\nBotanical Extracts",
+      "name_cn": "植物提取物",
+      "cas": ""
+    },
+    {
+      "name": "沙棘栗提取物",
+      "name_cn": "沙棘栗提取物",
+      "cas": ""
+    },
+    {
+      "name": "积雪草 95% 乙醇提取物",
+      "name_cn": "积雪草乙醇提取物",
+      "cas": ""
+    },
+    {
+      "name": "艾叶95%乙醇软提取物",
+      "name_cn": "艾叶乙醇软提取物",
+      "cas": ""
+    },
+    {
+      "name": "银杏叶干提取物",
+      "name_cn": "银杏叶干提取物",
+      "cas": ""
+    },
+    {
+      "name": "明放",
+      "name_cn": "明放",
+      "cas": ""
+    },
+    {
+      "name": "｛果j显\nMoisturizing",
+      "name_cn": "果显",
+      "cas": "13552-11-9"
+    },
+    {
+      "name": "神经酷肢NP/AP/EOP/AS/NS/NG",
+      "name_cn": "神经酷肢",
+      "cas": "00403-19-8"
+    },
+    {
+      "name": "依克多因",
+      "name_cn": "依克多因",
+      "cas": "96702-03-3"
+    },
+    {
+      "name": "S－玻色因（挂丙基四氢ut~n南三醇）",
+      "name_cn": "玻色因挂丙基四氢南三醇",
+      "cas": "39685-79-7"
+    },
+    {
+      "name": "角草草院",
+      "name_cn": "角草草院",
+      "cas": ""
+    },
+    {
+      "name": "角主主烯",
+      "name_cn": "角主主烯",
+      "cas": ""
+    },
+    {
+      "name": "维生素C丙二醇透明质酸酶(VCHA)",
+      "name_cn": "维生素丙二醇透明质酸酶",
+      "cas": "00464-57-6"
+    },
+    {
+      "name": "抗衰\nAnti-aging",
+      "name_cn": "抗衰",
+      "cas": "89030-95-5"
+    },
+    {
+      "name": "蛇毒肤",
+      "name_cn": "蛇毒肤",
+      "cas": "23202-99-9"
+    },
+    {
+      "name": "左旋聚乳酸",
+      "name_cn": "左旋聚乳酸",
+      "cas": "26811-96-1"
+    },
+    {
+      "name": "y －氨基丁酸（GABA)",
+      "name_cn": "氨基丁酸",
+      "cas": ""
+    },
+    {
+      "name": "α－硫辛酸",
+      "name_cn": "硫辛酸",
+      "cas": "1077-28-7"
+    },
+    {
+      "name": "芋螺肤",
+      "name_cn": "芋螺肤",
+      "cas": "36616-33-0"
+    },
+    {
+      "name": "防脱\nAnti-hair ｜。SS",
+      "name_cn": "防脱",
+      "cas": "72719-00-2"
+    },
+    {
+      "name": "生物素三肤－",
+      "name_cn": "生物素三肤",
+      "cas": "99157-54-3"
+    },
+    {
+      "name": "抗氧化\nAnti-oxidant",
+      "name_cn": "抗氧化",
+      "cas": ""
+    },
+    {
+      "name": "α－红没药醇",
+      "name_cn": "红没药醇",
+      "cas": "23089-26-1"
+    },
+    {
+      "name": "大麻暗酣（CBG)",
+      "name_cn": "大麻暗酣",
+      "cas": "25654-31-3"
+    },
+    {
+      "name": "谷脱甘肤",
+      "name_cn": "谷脱甘肤",
+      "cas": ""
+    },
+    {
+      "name": "自辈芦醇",
+      "name_cn": "自辈芦醇",
+      "cas": ""
+    },
+    {
+      "name": "美自\nWhitening",
+      "name_cn": "美自",
+      "cas": "18979-61-8"
+    },
+    {
+      "name": "维C乙基酷",
+      "name_cn": "维乙基酷",
+      "cas": "86404-04-8"
+    },
+    {
+      "name": "KT-",
+      "name_cn": "",
+      "cas": "81328-14-2"
+    },
+    {
+      "name": "修复\nRepairing",
+      "name_cn": "修复",
+      "cas": "83476-82-6"
+    },
+    {
+      "name": "DNA纳（PDRN)",
+      "name_cn": "纳",
+      "cas": "00403-24-5"
+    },
+    {
+      "name": "肝素纳",
+      "name_cn": "肝素纳",
+      "cas": "9041-08-1"
+    }
+  ],
+  "intermediates": [
+    {
+      "name": "Antibiotic\n抗生素",
+      "name_cn": "抗生素",
+      "cas": "92491-61-4"
+    },
+    {
+      "name": "头J包克j各",
+      "name_cn": "头包克各",
+      "cas": "53994-73-3"
+    },
+    {
+      "name": "头？包沙定",
+      "name_cn": "头包沙定",
+      "cas": ""
+    },
+    {
+      "name": "氟氧头J包",
+      "name_cn": "氟氧头包",
+      "cas": ""
+    },
+    {
+      "name": "Antifungal/\nAntibacterial\n抗真菌剂／抗细菌",
+      "name_cn": "抗真菌剂抗细菌",
+      "cas": "79411-15-7"
+    },
+    {
+      "name": "卡？自；如争",
+      "name_cn": "卡自如争",
+      "cas": "35575-42-7"
+    },
+    {
+      "name": "达巴万星",
+      "name_cn": "达巴万星",
+      "cas": "10882-84-3"
+    },
+    {
+      "name": "恩麻芬；争",
+      "name_cn": "恩麻芬争",
+      "cas": "60979-95-1"
+    },
+    {
+      "name": "那氟沙星",
+      "name_cn": "那氟沙星",
+      "cas": "80076-46-6"
+    },
+    {
+      "name": "利拉荼自旨",
+      "name_cn": "利拉荼自旨",
+      "cas": "89026-78-8"
+    },
+    {
+      "name": "米卡芬净",
+      "name_cn": "米卡芬净",
+      "cas": "68110-44-9"
+    },
+    {
+      "name": "179162-55-",
+      "name_cn": "",
+      "cas": "79162-55-1"
+    },
+    {
+      "name": "聚甲酣磺睦",
+      "name_cn": "聚甲酣磺睦",
+      "cas": "9011-02-3"
+    },
+    {
+      "name": "泪沙康瞠",
+      "name_cn": "泪沙康瞠",
+      "cas": "49809-43-8"
+    },
+    {
+      "name": "Antifungal/\nAntibacterial\n抗真面剂／抗细菌",
+      "name_cn": "抗真面剂抗细菌",
+      "cas": "84177-83-1"
+    },
+    {
+      "name": "伏立康瞠",
+      "name_cn": "伏立康瞠",
+      "cas": ""
+    },
+    {
+      "name": "137234-74-",
+      "name_cn": "",
+      "cas": "37234-74-3"
+    },
+    {
+      "name": "188416-28-",
+      "name_cn": "",
+      "cas": "88416-28-6"
+    },
+    {
+      "name": "188416-20-",
+      "name_cn": "",
+      "cas": "88416-20-8"
+    },
+    {
+      "name": "188416-29-",
+      "name_cn": "",
+      "cas": "88416-29-7"
+    },
+    {
+      "name": "Antivirals\n抗病毒药",
+      "name_cn": "抗病毒药",
+      "cas": "16384-53-3"
+    },
+    {
+      "name": "106941-25-",
+      "name_cn": "",
+      "cas": "06941-25-7"
+    },
+    {
+      "name": "恩蕾卡韦",
+      "name_cn": "恩蕾卡韦",
+      "cas": "42217-81-0"
+    },
+    {
+      "name": "奥司他韦",
+      "name_cn": "奥司他韦",
+      "cas": "04254-96-6"
+    },
+    {
+      "name": "204255-11-",
+      "name_cn": "",
+      "cas": "04255-11-8"
+    },
+    {
+      "name": "奈玛恃韦／利托那韦",
+      "name_cn": "奈玛恃韦利托那韦",
+      "cas": "28280-48-6"
+    },
+    {
+      "name": "565456-77-",
+      "name_cn": "",
+      "cas": "65456-77-1"
+    },
+    {
+      "name": "328086-60-",
+      "name_cn": "",
+      "cas": "28086-60-8"
+    },
+    {
+      "name": "帕瞠帕尼",
+      "name_cn": "帕瞠帕尼",
+      "cas": ""
+    },
+    {
+      "name": "雷特恪韦",
+      "name_cn": "雷特恪韦",
+      "cas": "19032-08-7"
+    },
+    {
+      "name": "201341-05-",
+      "name_cn": "",
+      "cas": "01341-05-1"
+    },
+    {
+      "name": "Anti-allergy\n抗迫敏",
+      "name_cn": "抗迫敏",
+      "cas": "27652-89-7"
+    },
+    {
+      "name": "122368-54-",
+      "name_cn": "",
+      "cas": "22368-54-1"
+    },
+    {
+      "name": "161558-45-",
+      "name_cn": "",
+      "cas": "61558-45-8"
+    },
+    {
+      "name": "210095-58-",
+      "name_cn": "",
+      "cas": "10095-58-2"
+    },
+    {
+      "name": "201594-84-",
+      "name_cn": "",
+      "cas": "01594-84-5"
+    },
+    {
+      "name": "地氯雷他走",
+      "name_cn": "地氯雷他走",
+      "cas": "79794-75-5"
+    },
+    {
+      "name": "普仓司特",
+      "name_cn": "普仓司特",
+      "cas": "30131-16-9"
+    },
+    {
+      "name": "136450-06-",
+      "name_cn": "",
+      "cas": "36450-06-1"
+    },
+    {
+      "name": "150821-03-",
+      "name_cn": "",
+      "cas": "50821-03-7"
+    },
+    {
+      "name": "110683-22-",
+      "name_cn": "",
+      "cas": "10683-22-2"
+    },
+    {
+      "name": "99-76-",
+      "name_cn": "",
+      "cas": ""
+    },
+    {
+      "name": "Antine。plastics\n抗肿瘤",
+      "name_cn": "抗肿瘤",
+      "cas": ""
+    },
+    {
+      "name": "115279-73-",
+      "name_cn": "",
+      "cas": "15279-73-7"
+    },
+    {
+      "name": "1158560-99-",
+      "name_cn": "",
+      "cas": "58560-99-6"
+    },
+    {
+      "name": "左亚叶酸铝",
+      "name_cn": "左亚叶酸铝",
+      "cas": ""
+    },
+    {
+      "name": "达沙蔷尼",
+      "name_cn": "达沙蔷尼",
+      "cas": "02964-24-5"
+    },
+    {
+      "name": "德鲁蔷康",
+      "name_cn": "德鲁蔷康",
+      "cas": "30379-58-9"
+    },
+    {
+      "name": "恩:t=L鲁肢",
+      "name_cn": "恩鲁肢",
+      "cas": "89942-66-0"
+    },
+    {
+      "name": "1332524-01-",
+      "name_cn": "",
+      "cas": "32524-01-2"
+    },
+    {
+      "name": "143782-23-",
+      "name_cn": "",
+      "cas": "43782-23-4"
+    },
+    {
+      "name": "厄j各蔷尼",
+      "name_cn": "厄各蔷尼",
+      "cas": "79688-29-0"
+    },
+    {
+      "name": "183322-18-",
+      "name_cn": "",
+      "cas": "83322-18-1"
+    },
+    {
+      "name": "依维莫司",
+      "name_cn": "依维莫司",
+      "cas": "53123-88-9"
+    },
+    {
+      "name": "依喜蔷康",
+      "name_cn": "依喜蔷康",
+      "cas": "10351-94-5"
+    },
+    {
+      "name": "吉非蔷尼",
+      "name_cn": "吉非蔷尼",
+      "cas": "7357-67-7"
+    },
+    {
+      "name": "179688-53-",
+      "name_cn": "",
+      "cas": "79688-53-0"
+    },
+    {
+      "name": "367-21-",
+      "name_cn": "",
+      "cas": ""
+    },
+    {
+      "name": "184475-35-",
+      "name_cn": "",
+      "cas": "84475-35-2"
+    },
+    {
+      "name": "吉西他j宾",
+      "name_cn": "吉西他宾",
+      "cas": "22111-03-9"
+    },
+    {
+      "name": "甲磺酸伊马苔尼",
+      "name_cn": "甲磺酸伊马苔尼",
+      "cas": "20127-57-1"
+    },
+    {
+      "name": "106261-49-",
+      "name_cn": "",
+      "cas": "06261-49-8"
+    },
+    {
+      "name": "152459-95-",
+      "name_cn": "",
+      "cas": "52459-95-5"
+    },
+    {
+      "name": "尼罗蔷尼",
+      "name_cn": "尼罗蔷尼",
+      "cas": "41571-10-0"
+    },
+    {
+      "name": "641571-11-",
+      "name_cn": "",
+      "cas": "41571-11-1"
+    },
+    {
+      "name": "641569-94-",
+      "name_cn": "",
+      "cas": "41569-94-0"
+    },
+    {
+      "name": "奥拉帕尼",
+      "name_cn": "奥拉帕尼",
+      "cas": "21298-67-8"
+    },
+    {
+      "name": "218301-22-",
+      "name_cn": "",
+      "cas": "18301-22-5"
+    },
+    {
+      "name": "帕博西尼",
+      "name_cn": "帕博西尼",
+      "cas": "66084-31-3"
+    },
+    {
+      "name": "571188-82-",
+      "name_cn": "",
+      "cas": "71188-82-4"
+    },
+    {
+      "name": "1016636-76-",
+      "name_cn": "",
+      "cas": "16636-76-2"
+    },
+    {
+      "name": "571188-59-",
+      "name_cn": "",
+      "cas": "71188-59-5"
+    },
+    {
+      "name": "培美由塞二纳",
+      "name_cn": "培美由塞二纳",
+      "cas": "37281-39-1"
+    },
+    {
+      "name": "165049-28-",
+      "name_cn": "",
+      "cas": "65049-28-5"
+    },
+    {
+      "name": "155405-80-",
+      "name_cn": "",
+      "cas": "55405-80-4"
+    },
+    {
+      "name": "托法首尼",
+      "name_cn": "托法首尼",
+      "cas": ""
+    },
+    {
+      "name": "477600-74-",
+      "name_cn": "",
+      "cas": "77600-74-1"
+    },
+    {
+      "name": "由贝蕾丁",
+      "name_cn": "由贝蕾丁",
+      "cas": "87578-99-2"
+    },
+    {
+      "name": "索拉菲尼",
+      "name_cn": "索拉菲尼",
+      "cas": "20000-87-3"
+    },
+    {
+      "name": "879085-55-",
+      "name_cn": "",
+      "cas": "79085-55-9"
+    },
+    {
+      "name": "Anti-hyperglycemic\n抗高血j糖",
+      "name_cn": "抗高血糖",
+      "cas": "30825-20-7"
+    },
+    {
+      "name": "达格列；争",
+      "name_cn": "达格列争",
+      "cas": "61432-24-6"
+    },
+    {
+      "name": "461432-25-",
+      "name_cn": "",
+      "cas": "61432-25-7"
+    },
+    {
+      "name": "恩格列净",
+      "name_cn": "恩格列净",
+      "cas": "64070-37-1"
+    },
+    {
+      "name": "915095-99-",
+      "name_cn": "",
+      "cas": "15095-99-7"
+    },
+    {
+      "name": "219823-47-",
+      "name_cn": "",
+      "cas": "19823-47-9"
+    },
+    {
+      "name": "1079083-63-",
+      "name_cn": "",
+      "cas": "79083-63-8"
+    },
+    {
+      "name": "915095-94-",
+      "name_cn": "",
+      "cas": "15095-94-2"
+    },
+    {
+      "name": "1279691-36-",
+      "name_cn": "",
+      "cas": "79691-36-9"
+    },
+    {
+      "name": "恪列美眼",
+      "name_cn": "恪列美眼",
+      "cas": ""
+    },
+    {
+      "name": "利恪列汀",
+      "name_cn": "利恪列汀",
+      "cas": "09113-72-6"
+    },
+    {
+      "name": "Anti-hyperglycemic\n抗高血糖",
+      "name_cn": "抗高血糖",
+      "cas": "09956-78-3"
+    },
+    {
+      "name": "853029-57-",
+      "name_cn": "",
+      "cas": "53029-57-9"
+    },
+    {
+      "name": "666816-98-",
+      "name_cn": "",
+      "cas": "66816-98-4"
+    },
+    {
+      "name": "蕾恪列汀",
+      "name_cn": "蕾恪列汀",
+      "cas": "01564-36-1"
+    },
+    {
+      "name": "401566-79-",
+      "name_cn": "",
+      "cas": "01566-79-8"
+    },
+    {
+      "name": "蔷尔泊肤",
+      "name_cn": "蔷尔泊肤",
+      "cas": "2424-92-2"
+    },
+    {
+      "name": "沙恪列汀",
+      "name_cn": "沙恪列汀",
+      "cas": "09031-45-8"
+    },
+    {
+      "name": "索马鲁肤",
+      "name_cn": "索马鲁肤",
+      "cas": "16930-82-3"
+    },
+    {
+      "name": "203787-91-",
+      "name_cn": "",
+      "cas": "03787-91-1"
+    },
+    {
+      "name": "843666-40－。",
+      "name_cn": "",
+      "cas": ""
+    },
+    {
+      "name": "871-70-",
+      "name_cn": "",
+      "cas": ""
+    },
+    {
+      "name": "磷酸西他列汀",
+      "name_cn": "磷酸西他列汀",
+      "cas": "86460-32-6"
+    },
+    {
+      "name": "486460-00-",
+      "name_cn": "",
+      "cas": "86460-00-8"
+    },
+    {
+      "name": "1385663-48-",
+      "name_cn": "",
+      "cas": "85663-48-8"
+    },
+    {
+      "name": "762240-92-",
+      "name_cn": "",
+      "cas": "62240-92-6"
+    },
+    {
+      "name": "Anti-hypertensive",
+      "name_cn": "氨氢地平",
+      "cas": ""
+    },
+    {
+      "name": "Anti-hypertensive\n抗高血压",
+      "name_cn": "抗高血压",
+      "cas": ""
+    },
+    {
+      "name": "89-98-",
+      "name_cn": "",
+      "cas": ""
+    },
+    {
+      "name": "阿齐沙坦",
+      "name_cn": "阿齐沙坦",
+      "cas": "50058-27-8"
+    },
+    {
+      "name": "139481-44-",
+      "name_cn": "",
+      "cas": "39481-44-0"
+    },
+    {
+      "name": "贝尼地平",
+      "name_cn": "贝尼地平",
+      "cas": "64051-79-2"
+    },
+    {
+      "name": "卡维地i各",
+      "name_cn": "卡维地各",
+      "cas": "52602-39-8"
+    },
+    {
+      "name": "非马沙坦",
+      "name_cn": "非马沙坦",
+      "cas": "03155-67-7"
+    },
+    {
+      "name": "124750-51-",
+      "name_cn": "",
+      "cas": "24750-51-2"
+    },
+    {
+      "name": "1315478-13-",
+      "name_cn": "",
+      "cas": "15478-13-7"
+    },
+    {
+      "name": "178554-19-",
+      "name_cn": "",
+      "cas": "78554-19-3"
+    },
+    {
+      "name": "j少库巴由",
+      "name_cn": "少库巴由",
+      "cas": "49690-12-0"
+    },
+    {
+      "name": "1012341-50-",
+      "name_cn": "",
+      "cas": "12341-50-2"
+    },
+    {
+      "name": "苔米沙坦",
+      "name_cn": "苔米沙坦",
+      "cas": "52628-03-0"
+    },
+    {
+      "name": "152628-02-",
+      "name_cn": "",
+      "cas": "52628-02-9"
+    },
+    {
+      "name": "528560-93-",
+      "name_cn": "",
+      "cas": "28560-93-2"
+    },
+    {
+      "name": "114772-38-",
+      "name_cn": "",
+      "cas": "14772-38-2"
+    },
+    {
+      "name": "组沙坦",
+      "name_cn": "组沙坦",
+      "cas": "37863-17-3"
+    },
+    {
+      "name": "Anti-hypercholester。\nlemia\n抗高胆固醇",
+      "name_cn": "抗高胆固醇",
+      "cas": "34495-00-9"
+    },
+    {
+      "name": "125971-95-",
+      "name_cn": "",
+      "cas": "25971-95-1"
+    },
+    {
+      "name": "依折麦布",
+      "name_cn": "依折麦布",
+      "cas": "89028-93-1"
+    },
+    {
+      "name": "272778-12-",
+      "name_cn": "",
+      "cas": "72778-12-8"
+    },
+    {
+      "name": "163222-33-",
+      "name_cn": "",
+      "cas": "63222-33-1"
+    },
+    {
+      "name": "匹伐他汀铝",
+      "name_cn": "匹伐他汀铝",
+      "cas": "47489-06-3"
+    },
+    {
+      "name": "瑞舒伐他汀铝",
+      "name_cn": "瑞舒伐他汀铝",
+      "cas": "47118-35-2"
+    },
+    {
+      "name": "Anti-hyperch。lester。\nlemia\n抗高胆固醇",
+      "name_cn": "抗高胆固醇",
+      "cas": "47118-37-4"
+    },
+    {
+      "name": "124655-09-",
+      "name_cn": "",
+      "cas": "24655-09-0"
+    },
+    {
+      "name": "147118-40-",
+      "name_cn": "",
+      "cas": "47118-40-9"
+    },
+    {
+      "name": "1326302-97-",
+      "name_cn": "",
+      "cas": "26302-97-9"
+    },
+    {
+      "name": "355806-00-",
+      "name_cn": "",
+      "cas": "55806-00-7"
+    },
+    {
+      "name": "289042-12-",
+      "name_cn": "",
+      "cas": "89042-12-2"
+    },
+    {
+      "name": "辛伐他汀",
+      "name_cn": "辛伐他汀",
+      "cas": "5856-77-9"
+    },
+    {
+      "name": "Antithromb。tic\n抗血栓",
+      "name_cn": "抗血栓",
+      "cas": "74874-08-1"
+    },
+    {
+      "name": "硫酸氢氯毗恪雷",
+      "name_cn": "硫酸氢氯毗恪雷",
+      "cas": "88744-36-9"
+    },
+    {
+      "name": "141109-19-",
+      "name_cn": "",
+      "cas": "41109-19-5"
+    },
+    {
+      "name": "141109-14-",
+      "name_cn": "",
+      "cas": "41109-14-0"
+    },
+    {
+      "name": "达比加群",
+      "name_cn": "达比加群",
+      "cas": "03041-38-9"
+    },
+    {
+      "name": "212322-56-",
+      "name_cn": "",
+      "cas": "12322-56-0"
+    },
+    {
+      "name": "211915-84-",
+      "name_cn": "",
+      "cas": "11915-84-3"
+    },
+    {
+      "name": "依度沙班",
+      "name_cn": "依度沙班",
+      "cas": "10348-34-7"
+    },
+    {
+      "name": "720720-96-",
+      "name_cn": "",
+      "cas": "20720-96-7"
+    },
+    {
+      "name": "1243308-37-",
+      "name_cn": "",
+      "cas": "43308-37-3"
+    },
+    {
+      "name": "1353893-22-",
+      "name_cn": "",
+      "cas": "53893-22-7"
+    },
+    {
+      "name": "365997-33-",
+      "name_cn": "",
+      "cas": "65997-33-7"
+    },
+    {
+      "name": "480452-36-",
+      "name_cn": "",
+      "cas": "80452-36-6"
+    },
+    {
+      "name": "123333-53-",
+      "name_cn": "",
+      "cas": "23333-53-9"
+    },
+    {
+      "name": "365998-36-",
+      "name_cn": "",
+      "cas": "65998-36-3"
+    },
+    {
+      "name": "349125-08-",
+      "name_cn": "",
+      "cas": "49125-08-2"
+    },
+    {
+      "name": "尼麦角林",
+      "name_cn": "尼麦角林",
+      "cas": "23495-64-9"
+    },
+    {
+      "name": "普拉格雷",
+      "name_cn": "普拉格雷",
+      "cas": "15473-15-9"
+    },
+    {
+      "name": "204205-33-",
+      "name_cn": "",
+      "cas": "04205-33-4"
+    },
+    {
+      "name": "沙恪富国旨",
+      "name_cn": "沙恪富国旨",
+      "cas": "67145-13-3"
+    },
+    {
+      "name": "135261-74-",
+      "name_cn": "",
+      "cas": "35261-74-4"
+    },
+    {
+      "name": "G。utand\nhyperuricemia\n治疗痛凤和高原酸血症",
+      "name_cn": "治疗痛凤和高原酸血症",
+      "cas": "25984-63-8"
+    },
+    {
+      "name": "161797-99-",
+      "name_cn": "",
+      "cas": "61797-99-5"
+    },
+    {
+      "name": "161798-01-",
+      "name_cn": "",
+      "cas": "61798-01-2"
+    },
+    {
+      "name": "161798-03-",
+      "name_cn": "",
+      "cas": "61798-03-4"
+    },
+    {
+      "name": "160844-75-",
+      "name_cn": "",
+      "cas": "60844-75-7"
+    },
+    {
+      "name": "托匹司他",
+      "name_cn": "托匹司他",
+      "cas": "94413-64-6"
+    },
+    {
+      "name": "Heart Rate Inhibit。r\n心率拥制剂",
+      "name_cn": "心率拥制剂",
+      "cas": "35202-54-1"
+    },
+    {
+      "name": "866783-13-",
+      "name_cn": "",
+      "cas": "66783-13-3"
+    },
+    {
+      "name": "美西律",
+      "name_cn": "美西律",
+      "cas": "2446-83-5"
+    },
+    {
+      "name": "盐酸。比西卡尼",
+      "name_cn": "盐酸比西卡尼",
+      "cas": ""
+    },
+    {
+      "name": "Anti psych。tic",
+      "name_cn": "富马酸哇硫平",
+      "cas": "13349-82-1"
+    },
+    {
+      "name": "Anti psychotic",
+      "name_cn": "富马酸瞌肮平",
+      "cas": "3159-07-7"
+    },
+    {
+      "name": "AD",
+      "name_cn": "多奈眼齐",
+      "cas": "20013-39-0"
+    },
+    {
+      "name": "884740-09-",
+      "name_cn": "",
+      "cas": "84740-09-4"
+    },
+    {
+      "name": "PD",
+      "name_cn": "罗蔷戈汀",
+      "cas": "25572-93-2"
+    },
+    {
+      "name": "Anti-migraine\n抗偏头痛",
+      "name_cn": "抗偏头痛",
+      "cas": "03628-48-4"
+    },
+    {
+      "name": "佳米由普坦",
+      "name_cn": "佳米由普坦",
+      "cas": "52305-23-2"
+    },
+    {
+      "name": "Anti-inflammat。ry",
+      "name_cn": "各索浩芬铀",
+      "cas": "68767-14-6"
+    },
+    {
+      "name": "Gastrointestinal\nregulation\n胃肠道调节",
+      "name_cn": "胃肠道调节",
+      "cas": ""
+    },
+    {
+      "name": "122892-31-",
+      "name_cn": "",
+      "cas": "22892-31-3"
+    },
+    {
+      "name": "拉夫蔷丁",
+      "name_cn": "拉夫蔷丁",
+      "cas": "46447-26-9"
+    },
+    {
+      "name": "123855-55-",
+      "name_cn": "",
+      "cas": "23855-55-0"
+    },
+    {
+      "name": "莫沙必利",
+      "name_cn": "莫沙必利",
+      "cas": "12885-41-3"
+    },
+    {
+      "name": "108282-38-",
+      "name_cn": "",
+      "cas": "08282-38-8"
+    },
+    {
+      "name": "112914-13-",
+      "name_cn": "",
+      "cas": "12914-13-3"
+    },
+    {
+      "name": "112913-94-",
+      "name_cn": "",
+      "cas": "12913-94-7"
+    },
+    {
+      "name": "Gastr＇。intestinal\nregulation\n胃肠道调节",
+      "name_cn": "胃肠道调节",
+      "cas": "44648-22-2"
+    },
+    {
+      "name": "1270294-05-",
+      "name_cn": "",
+      "cas": "70294-05-7"
+    },
+    {
+      "name": "942195-86-",
+      "name_cn": "",
+      "cas": "42195-86-0"
+    },
+    {
+      "name": "942195-91-",
+      "name_cn": "",
+      "cas": "42195-91-7"
+    },
+    {
+      "name": "1640981-20-",
+      "name_cn": "",
+      "cas": "40981-20-9"
+    },
+    {
+      "name": "富马酸沃诺拉赞",
+      "name_cn": "富马酸沃诺拉赞",
+      "cas": "81674-56-2"
+    },
+    {
+      "name": "1240948-77-",
+      "name_cn": "",
+      "cas": "40948-77-9"
+    },
+    {
+      "name": "Arthrophlog。sis",
+      "name_cn": "阿普斯特",
+      "cas": "53168-94-4"
+    },
+    {
+      "name": "。veractive bladder\n（。AB)\n酶脱过度活动症",
+      "name_cn": "酶脱过度活动症",
+      "cas": "29676-71-9"
+    },
+    {
+      "name": "521284-21-",
+      "name_cn": "",
+      "cas": "21284-21-9"
+    },
+    {
+      "name": "丙服维林",
+      "name_cn": "丙服维林",
+      "cas": ""
+    },
+    {
+      "name": "维贝格龙",
+      "name_cn": "维贝格龙",
+      "cas": "63625-46-5"
+    },
+    {
+      "name": "1190391-87-",
+      "name_cn": "",
+      "cas": "90391-87-7"
+    },
+    {
+      "name": "。veractive bladder\n（。AB)\n腾脱过度活动症",
+      "name_cn": "腾脱过度活动症",
+      "cas": "90391-88-8"
+    },
+    {
+      "name": "1190391-89-",
+      "name_cn": "",
+      "cas": "90391-89-9"
+    },
+    {
+      "name": "1190391-90-",
+      "name_cn": "",
+      "cas": "90391-90-2"
+    },
+    {
+      "name": "ED",
+      "name_cn": "阿伐那非",
+      "cas": "41965-95-1"
+    },
+    {
+      "name": "Eye drops\n滴眼液",
+      "name_cn": "滴眼液",
+      "cas": "11427-08-6"
+    },
+    {
+      "name": "利非司特",
+      "name_cn": "利非司特",
+      "cas": "51784-82-2"
+    },
+    {
+      "name": "1194550-59-",
+      "name_cn": "",
+      "cas": "94550-59-8"
+    },
+    {
+      "name": "1156547-55-",
+      "name_cn": "",
+      "cas": "56547-55-5"
+    },
+    {
+      "name": "盐酸奥海他走",
+      "name_cn": "盐酸奥海他走",
+      "cas": "55453-89-9"
+    },
+    {
+      "name": "瑞舒地尔",
+      "name_cn": "瑞舒地尔",
+      "cas": "06820-10-8"
+    },
+    {
+      "name": "223644-14-",
+      "name_cn": "",
+      "cas": "23644-14-2"
+    },
+    {
+      "name": "Polypeptide\n多肤",
+      "name_cn": "多肤",
+      "cas": "35661-39-3"
+    },
+    {
+      "name": "p。lypeptide\n多晾",
+      "name_cn": "多晾",
+      "cas": ""
+    },
+    {
+      "name": "Others\n翼他",
+      "name_cn": "翼他",
+      "cas": "25013-16-5"
+    },
+    {
+      "name": "丁酸",
+      "name_cn": "丁酸",
+      "cas": ""
+    },
+    {
+      "name": "疏水胶态二氧化硅",
+      "name_cn": "疏水胶态二氧化硅",
+      "cas": "68611-44-9"
+    },
+    {
+      "name": "L－憧脑磺酸",
+      "name_cn": "憧脑磺酸",
+      "cas": "35963-20-3"
+    },
+    {
+      "name": "L－赖氨酸",
+      "name_cn": "赖氨酸",
+      "cas": ""
+    },
+    {
+      "name": "聚乙二醇 PEG",
+      "name_cn": "聚乙二醇",
+      "cas": "25322-68-3"
+    },
+    {
+      "name": "椰油基是乙基磺酸纳",
+      "name_cn": "椰油基是乙基磺酸纳",
+      "cas": "61789-32-0"
+    },
+    {
+      "name": "泛酸钙",
+      "name_cn": "泛酸钙",
+      "cas": ""
+    },
+    {
+      "name": "叶酸",
+      "name_cn": "叶酸",
+      "cas": ""
+    },
+    {
+      "name": "维生素D",
+      "name_cn": "维生素",
+      "cas": ""
+    },
+    {
+      "name": "NMN",
+      "name_cn": "",
+      "cas": "1094-61-7"
+    },
+    {
+      "name": "米诺地尔",
+      "name_cn": "米诺地尔",
+      "cas": "38304-91-5"
+    }
+  ]
+}
