@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Aurun International</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-dark: #002244;
+            --primary-light: #004488;
+            --secondary: #0066cc;
+            --accent: #ff6600;
+            --light: #f5f7fa;
+            --light-gray: #e8ecf0;
+            --dark: #1a1a2e;
+            --text: #333333;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --white: #ffffff;
+            --border: #dde1e6;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px;
+            padding: 20px 0;
+        }
+        
+        .pagination button {
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .pagination button:hover:not(:disabled) {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .pagination button.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .pagination .page-info {
+            padding: 0 15px;
+            color: var(--text-light);
+        }
+        
+        /* Language Bar - 与主页完全一致 */
+        .lang-bar {
+            background: var(--primary);
+            padding: 8px 0;
+            font-size: 13px;
+        }
+        
+        .lang-bar-inner {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        
+        .lang-bar a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 2px 8px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+        
+        .lang-bar a:hover,
+        .lang-bar a.active {
+            color: var(--white);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        /* Header - 与主页完全一致 */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        .logo-text span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        /* Main Navigation - 与主页完全一致 */
+        .main-nav {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .main-nav a {
+            display: block;
+            padding: 10px 18px;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        
+        .main-nav a:hover {
+            background: var(--light);
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .main-nav a.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Main Layout */
+        .main-content {
+            display: flex;
+            min-height: calc(100vh - 120px);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--white);
+            border-right: 1px solid var(--border);
+            padding: 30px 0;
+        }
+        
+        .sidebar-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0 25px;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-item {
+            display: block;
+            padding: 14px 25px;
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+            text-decoration: none;
+        }
+        
+        .sidebar-item:hover {
+            background: var(--light);
+            border-left-color: var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .sidebar-item.active {
+            background: var(--light);
+            border-left-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 40px;
+            background: var(--light);
+        }
+        
+        .content-inner {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        /* Table */
+        .product-table-wrap {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .product-table th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .product-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+            font-size: 14px;
+        }
+        
+        .product-table tr:hover {
+            background: var(--light);
+        }
+        
+        .merge-cell {
+            background: var(--light-gray) !important;
+            font-weight: 600;
+        }
+        
+        .disease-cell {
+            background: #e6f0ff !important;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Welcome */
+        .welcome {
+            text-align: center;
+            padding: 80px 40px;
+        }
+        
+        .welcome h2 {
+            color: var(--primary);
+            font-size: 24px;
+            border: none;
+            margin-bottom: 15px;
+        }
+        
+        .welcome p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+        
+        /* Footer - 与主页一致 */
+        footer {
+            background: linear-gradient(135deg, #1a3a5c 0%, #0d2137 100%);
+            color: var(--white);
+            padding: 50px 0 25px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+        
+        .footer-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Bar - 与主页一致 -->
+    <div class="lang-bar">
+        <div class="container">
+            <div class="lang-bar-inner">
+                <a href="javascript:;" data-lang="en" id="lang-en">English</a>
+                <a href="javascript:;" data-lang="zh" id="lang-zh">中文</a>
+                <a href="javascript:;" data-lang="ko" id="lang-ko">한국어</a>
+                <a href="javascript:;" data-lang="ja" id="lang-ja">日本語</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header - 与主页一致 -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <div class="logo-mark"><img src="logo.png" alt="Aurun International" style="width: auto; height: 45px; object-fit: contain;"></div>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html#home" data-en="Home" data-zh="首页" data-ko="홈" data-ja="ホーム">Home</a>
+                    <a href="index.html#about" data-en="About Us" data-zh="关于我们" data-ko="회사 소개" data-ja="会社概要">About Us</a>
+                    <a href="index.html#products" data-en="Business" data-zh="业务" data-ko="서비스" data-ja="事業">Business</a>
+                    <a href="products-new-v2.html" data-en="Products" data-zh="产品" data-ko="제품" data-ja="製品" class="active">Products</a>
+                    <a href="index.html#contact" data-en="Contact" data-zh="联系我们" data-ko="문의" data-ja="お問い合わせ">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-title" data-en="Product Categories" data-zh="产品分类" data-ja="製品カテゴリー" data-ko="제품 카테고리">Product Categories</div>
+            <a class="sidebar-item" data-cat="api" onclick="showCat('api')" data-en="API (Active Pharmaceutical Ingredients)" data-zh="API (原料药)" data-ja="API（医薬原薬）" data-ko="API（원료약）">API (Active Pharmaceutical Ingredients)</a>
+            <a class="sidebar-item" data-cat="biosimilar" onclick="showCat('biosimilar')" data-en="Biosimilar (生物类似药)" data-zh="Biosimilar (生物类似药)" data-ja="Biosimilar（バイオ後続品）" data-ko="Biosimilar（생물학적 유사약）">Biosimilar</a>
+            <a class="sidebar-item" data-cat="cosmetic" onclick="showCat('cosmetic')" data-en="Cosmetic Ingredients (化妆品原料)" data-zh="Cosmetic Ingredients (化妆品原料)" data-ja="Cosmetic Ingredients（化粧品原料）" data-ko="Cosmetic Ingredients（화장품 원료）">Cosmetic Ingredients</a>
+            <a class="sidebar-item" data-cat="intermediates" onclick="showCat('intermediates')" data-en="Intermediates (医药中间体)" data-zh="Intermediates (医药中间体)" data-ja="Intermediates（医薬中間体）" data-ko="Intermediates（의약 중간체）">Intermediates</a>
+            
+            <!-- Search Box -->
+            <div style="margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.03); border-radius: 8px;">
+                <input type="text" id="productSearch" placeholder="Search products..." 
+                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;"
+                    data-placeholder-en="Search products..." data-placeholder-zh="搜索产品..." data-placeholder-ja="製品を検索..." data-placeholder-ko="제품 검색..."
+                    oninput="searchProducts(this.value)">
+            </div>
+        </aside>
+        
+        <!-- Content -->
+        <main class="content">
+            <div class="content-inner">
+                <!-- Welcome -->
+                <div id="welcome" class="welcome">
+                    <p data-en="Select a product category from the left to view our product portfolio." data-zh="请从左侧选择产品分类查看我们的产品组合。" data-ja="左から製品カテゴリーを選択して、製品ポートフォリオを表示してください。" data-ko="왼쪽에서 제품 카테고리를 선택하여 제품 포트폴리오를 확인하세요.">Select a product category from the left to view our product portfolio.</p>
+                </div>
+                
+                <!-- API -->
+                <div id="api" class="cat-content hidden">
+                    <div class="product-table-wrap">
+                        <table class="product-table">
+                            <thead><tr><th>No.</th><th data-en="Product Name" data-zh="产品名称" data-ja="製品名" data-ko="제품명">Product Name</th><th data-en="产品名称" data-zh="产品名称" data-ja="中国語名" data-ko="중국어 명칭">产品名称</th><th>CAS No.</th></tr></thead>
+                            <tbody>
+<tr><td>1</td><td>Alfacalcidol</td><td>阿法骨化醇</td><td>41294-56-8</td></tr>
+<tr><td>2</td><td>Amenamevir</td><td>阿莫奈韦</td><td>841301-32-4</td></tr>
+<tr><td>3</td><td>Anidulafungin</td><td>阿尼芬净</td><td>166663-25-8</td></tr>
+<tr><td>4</td><td>Apalutamide</td><td>阿帕他胺</td><td>956104-40-8</td></tr>
+<tr><td>5</td><td>Apixaban</td><td>阿哌沙班</td><td>503612-47-3</td></tr>
+<tr><td>6</td><td>Apremilast</td><td>阿普斯特</td><td>608141-41-9</td></tr>
+<tr><td>7</td><td>Atorvastatin Calcium</td><td>阿托伐他汀钙</td><td>134523-03-8</td></tr>
+<tr><td>8</td><td>Avibactam Sodium</td><td>阿维巴坦钠</td><td>1192491-61-4</td></tr>
+<tr><td>9</td><td>Berberine HCI</td><td>盐酸小檗碱</td><td>633-65-8</td></tr>
+<tr><td>10</td><td>Betulinic Acid</td><td>白桦脂酸</td><td>472-15-1</td></tr>
+<tr><td>11</td><td>Bictegravir Sodium</td><td>比克替拉韦钠</td><td>1807988-02-8</td></tr>
+<tr><td>12</td><td>Bromelain</td><td>菠萝蛋白酶</td><td>9001-00-7</td></tr>
+<tr><td>13</td><td>Ca L-5-Methyltetrahydrofolate (Folate)</td><td>L-5-甲基四氢叶酸钙</td><td>151533-22-1</td></tr>
+<tr><td>14</td><td>Calcipotriol Monohydrate</td><td>卡泊三醇一水化物</td><td>147657-22-5 </td></tr>
+<tr><td>15</td><td>Carvedilol</td><td>卡维地洛</td><td>72956-09-3</td></tr>
+<tr><td>16</td><td>Ceftazidime+Avibactam</td><td>头孢他啶阿维巴坦复合API</td><td>72558-82-8 & 824149-60-8</td></tr>
+<tr><td>17</td><td>Ceftriaxone Sodium (Non-sterile)</td><td>头孢曲松钠</td><td>104376-79-6</td></tr>
+<tr><td>18</td><td>Celecoxib</td><td>塞来昔布</td><td>169590-42-5</td></tr>
+<tr><td>19</td><td>Conjugated Estrogens</td><td>共轭雌激素</td><td>112126-59-9</td></tr>
+<tr><td>20</td><td>Dasatinib Monohydrate</td><td>达沙替尼一水合物</td><td>863127-77-9</td></tr>
+<tr><td>21</td><td>Diosmin</td><td>地奥司明</td><td>608141-41-9</td></tr>
+<tr><td>22</td><td>Dydrogesterone</td><td>地屈孕酮</td><td>152-62-5</td></tr>
+<tr><td>23</td><td>Emodepside</td><td>艾默德斯</td><td>155030-63-0</td></tr>
+<tr><td>24</td><td>Empagliflozin</td><td>恩格列净</td><td>864070-44-0</td></tr>
+<tr><td>25</td><td>Epothilone B</td><td>埃博霉素B</td><td>152044-54-7</td></tr>
+<tr><td>26</td><td>Etoposide</td><td>依托泊苷</td><td>33419-42-0</td></tr>
+<tr><td>27</td><td>Ezetimibe</td><td>依折麦布</td><td>163222-33-1</td></tr>
+<tr><td>28</td><td>Fenbendazole</td><td>芬苯达唑</td><td>43210-67-9</td></tr>
+<tr><td>29</td><td>Flumazenil</td><td>氟马西尼</td><td>78755-81-4</td></tr>
+<tr><td>30</td><td>Fusidic Acid</td><td>夫西地酸</td><td>6990-06-3  </td></tr>
+<tr><td>31</td><td>Gadoxetate Disodium</td><td>钆塞酸二钠</td><td>135326-22-6</td></tr>
+<tr><td>32</td><td>Heparin Sodium</td><td>肝素钠</td><td>9041-08-1</td></tr>
+<tr><td>33</td><td>Istradefylline</td><td>伊曲茶碱</td><td>155270-99-8</td></tr>
+<tr><td>34</td><td>Itopride HCI</td><td>伊托必利</td><td>122892-31-3</td></tr>
+<tr><td>35</td><td>Ivermectin</td><td>伊维菌素</td><td>70288-86-7</td></tr>
+<tr><td>36</td><td>Liraglutide</td><td>利拉鲁肽</td><td>204656-20-2</td></tr>
+<tr><td>37</td><td>Melatonin</td><td>褪黑素</td><td>73-31-4</td></tr>
+<tr><td>38</td><td>Methylcobalamin (B12) </td><td>甲钴胺</td><td>13422-55-4</td></tr>
+<tr><td>39</td><td>Naproxen</td><td>萘普生</td><td>22204-53-1</td></tr>
+<tr><td>40</td><td>Nefopam Hydrochloride</td><td>盐酸奈福泮</td><td>23327-57-3</td></tr>
+<tr><td>41</td><td>Nicardipin Hydrochloride</td><td>盐酸尼卡地平</td><td>54527-84-3</td></tr>
+<tr><td>42</td><td>Nifedipine</td><td>硝苯地平</td><td>21829-25-4</td></tr>
+<tr><td>43</td><td>Norepinephrine Bitartrate (Noradrenaline Bitartrate)</td><td>重酒石酸去甲肾上腺素</td><td>108341-18-0</td></tr>
+<tr><td>44</td><td>Posaconazole</td><td>泊沙康唑</td><td>171228-49-2</td></tr>
+<tr><td>45</td><td>Pyridoxal 5-phosphate</td><td>VB6衍生物</td><td>54-47-7</td></tr>
+<tr><td>46</td><td>Pyridoxine Hydrochloride  (B6)</td><td>维生素B6</td><td>58-56-0</td></tr>
+<tr><td>47</td><td>Quercetin</td><td>槲皮素</td><td>117-39-5</td></tr>
+<tr><td>48</td><td>Ropivacaine Hydrochloride </td><td>盐酸罗哌卡因</td><td>98717-15-8</td></tr>
+<tr><td>49</td><td>Rosuvastatin Calcium</td><td>瑞舒伐他汀钙</td><td>147098-20-2</td></tr>
+<tr><td>50</td><td>Sacubitril Sodium</td><td>沙库巴曲钠</td><td>149690-05-1</td></tr>
+<tr><td>51</td><td>Sacubitril Valsartan Sodium</td><td>沙库巴曲缬沙坦钠</td><td>936623-90-4</td></tr>
+<tr><td>52</td><td>Sarecycline</td><td>萨瑞环素</td><td>1035654-66-0 </td></tr>
+<tr><td>53</td><td>Semaglutide</td><td>索马鲁肽</td><td>910463-68-2</td></tr>
+<tr><td>54</td><td>Sildenafil Citrate</td><td>枸橼酸西地那非</td><td>171599-83-0</td></tr>
+<tr><td>55</td><td>Simethicone 30% </td><td>西甲硅油30%</td><td>8050-81-5</td></tr>
+<tr><td>56</td><td>Simvastatin</td><td>辛伐他汀</td><td>79902-63-9</td></tr>
+<tr><td>57</td><td>Sitagliptin </td><td>西他列汀</td><td>486460-32-6</td></tr>
+<tr><td>58</td><td>Sitagliptin Hydrochloride</td><td>西他列汀盐酸盐</td><td>486459-71-6</td></tr>
+<tr><td>59</td><td>Sodium Fusidate</td><td>夫西地酸钠</td><td>751-94-0  </td></tr>
+<tr><td>60</td><td>Sofosbuvir</td><td>索非布韦</td><td>1190307-88-0</td></tr>
+<tr><td>61</td><td>Sugammadex Sodium</td><td>舒更葡糖钠</td><td>343306-79-6</td></tr>
+<tr><td>62</td><td>Thaumatin</td><td>索马甜</td><td>53850-34-3</td></tr>
+<tr><td>63</td><td>Tigecycline</td><td>替加环素</td><td>220620-09-7</td></tr>
+<tr><td>64</td><td>Tirzepatide</td><td>替尔泊肽</td><td>2023788-19-2</td></tr>
+<tr><td>65</td><td>Tofacitinib</td><td>托法替尼</td><td>477600-75-2</td></tr>
+<tr><td>66</td><td>Tofacitinib Citrate</td><td>枸橼酸托法替尼</td><td>941678-49-5</td></tr>
+<tr><td>67</td><td>Upadacitinib Hemihydrate</td><td>乌帕替尼半水合物</td><td>2050057-56-0</td></tr>
+<tr><td>68</td><td>Valsartan</td><td>缬沙坦</td><td>137862-53-4</td></tr>
+<tr><td>69</td><td>VD3 Oil</td><td>VD 3油</td><td>67-97-0</td></tr>
+<tr><td>70</td><td>Velpatasvir</td><td>维帕他韦</td><td>1377049-84-7</td></tr>
+<tr><td>71</td><td>Vonoprazan</td><td>沃诺拉赞</td><td>1260141-27-2</td></tr>
+                            </tbody></table></div></div>
+                
+                <!-- Biosimilar -->
+                <div id="biosimilar" class="cat-content hidden">
+                    <h2 data-en="ADC Payload" data-zh="ADC Payload (抗体偶联药物)" data-ja="ADC Payload（抗体薬物）" data-ko="ADC Payload（항체 약물접합체）">ADC Payload</h2>
+                    <div class="product-table-wrap">
+                        <table class="product-table">
+                            <thead><tr><th>No.</th><th data-en="Product Name" data-zh="产品名称" data-ja="製品名" data-ko="제품명">Product Name</th><th>CAS No.</th><th data-en="Status" data-zh="状态" data-ja="ステータス" data-ko="상태">Status</th></tr></thead>
+                            <tbody>
+<tr><td>1</td><td>Ansamitocin P-3 安斯菌素P-3</td><td>66584-72-3</td><td>DMF</td></tr>
+<tr><td>2</td><td>DM1</td><td>139504-50-0</td><td>DMF</td></tr>
+<tr><td>3</td><td>DM4</td><td>796073-69-3</td><td>Pilot</td></tr>
+<tr><td>4</td><td>Exatecan mesylate 甲磺酸依喜替康</td><td>169869-90-3</td><td>DMF</td></tr>
+<tr><td>5</td><td>Deruxatecan 德鲁替康</td><td>1599440-13-7</td><td>Validated</td></tr>
+<tr><td>6</td><td>Eribulin Mesilate 甲磺酸艾瑞布林</td><td>441045-17-6</td><td>DMF; ASMF Approved</td></tr>
+<tr><td>7</td><td>Lurbinectedin 卢比替丁</td><td>497871-47-3</td><td>DMF</td></tr>
+<tr><td>8</td><td>SN38</td><td>86639-52-3</td><td>Pilot</td></tr>
+<tr><td>9</td><td>MMAE 一甲基澳瑞他汀E</td><td>474645-27-7</td><td>Pilot</td></tr>
+<tr><td>10</td><td>MMAF 一甲基澳瑞他汀F</td><td>745017-94-1</td><td>Pilot</td></tr>
+<tr><td>11</td><td>Calicheamicin 卡里奇霉素</td><td>108212-75-5</td><td>DMF</td></tr>
+<tr><td>12</td><td>N-Acetyl-Calicheamicin N-乙酰基卡里奇霉素</td><td>108212-76-6</td><td>Pilot</td></tr>
+                            </tbody></table></div>
+                    
+                    <h2 data-en="Monoclonal Antibodies" data-zh="Monoclonal Antibodies (单克隆抗体)" data-ja="Monoclonal Antibodies（モノクローナル抗体）" data-ko="Monoclonal Antibodies（단일클론항체）">Monoclonal Antibodies</h2>
+                    <div class="product-table-wrap">
+                        <table class="product-table">
+                            <thead><tr><th>No.</th><th data-en="Name" data-zh="名称" data-ja="名称" data-ko="이름">Name</th><th>COA</th><th>MSDS</th><th>DMF</th><th data-en="DMF (Total)" data-zh="DMF (总览)" data-ja="DMF（総括）" data-ko="DMF (전체)">DMF (Total)</th><th data-en="Comparability" data-zh="相似性评估" data-ja="類似性評価" data-ko="유사성 평가">Comparability</th><th data-en="Stability" data-zh="稳定性" data-ja="安定性" data-ko="안정성">Stability</th><th>MOA</th><th>PFD</th></tr></thead>
+                            <tbody>
+<tr><td>1</td><td>Pembrolizumab 帕姆单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>2</td><td>Nivolumab 纳武单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>3</td><td>Trastuzumab 曲妥珠单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>4</td><td>Tocilizumab 托珠单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>5</td><td>Denosumab 狄诺塞麦</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>6</td><td>Ustekinumab 优特克单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>7</td><td>Aflibercept 阿柏西普</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>8</td><td>Cetuximab 西妥昔单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>9</td><td>Rituximab 利妥昔单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>10</td><td>Bevacizumab 贝伐珠单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>11</td><td>Adalimumab 阿达木单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>12</td><td>Atezolizumab 阿特珠单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>13</td><td>Dulaglutide 度拉鲁肽</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>14</td><td>Eculizumab 依库丽单抗</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>15</td><td>Trastuzumab-Deruxtecan 德曲妥珠单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>16</td><td>Pertuzumab 帕妥珠单抗</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>17</td><td>Ipilimumab 伊匹单抗</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>18</td><td>Tezepelumab 特泽鲁单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>19</td><td>Faricimab 法瑞西单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>20</td><td>Romosozumab 罗莫单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>21</td><td>Omalizumab 奥马珠单抗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>22</td><td>Daratumumab 达雷木单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>23</td><td>Lecanemab 仑卡奈单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>24</td><td>Trastuzumab-Emtanisne 恩美曲妥珠单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>25</td><td>Dupilumab 度匹鲁单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>26</td><td>Alirocumab 阿利库单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>27</td><td>Secukinumab 苏金单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>28</td><td>Ramucirumab 雷莫芦单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>29</td><td>Evolocumab 依伏库单抗</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>31</td><td>Risankizumab RZA 瑞莎珠单抗</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            </tbody></table></div></div>
+                
+                <!-- Cosmetic -->
+                <div id="cosmetic" class="cat-content hidden">
+                    <div class="product-table-wrap">
+                        <table class="product-table">
+                            <thead><tr><th data-en="Category" data-zh="功效分类" data-ja="カテゴリー" data-ko="카테고리">Category</th><th>No.</th><th data-en="Product Name (CN)" data-zh="产品名称" data-ja="中国語名" data-ko="제품명(중문)">Product Name (CN)</th><th data-en="Product Name (EN)" data-zh="产品名称(英文)" data-ja="英語名" data-ko="제품명(영문)">Product Name (EN)</th><th>CAS No.</th></tr></thead>
+                            <tbody>
+<tr><td rowspan="7" class="merge-cell">保湿 Moisturizing</td><td>1</td><td>植物鞘氨醇</td><td>Phytosphingosine</td><td>13552-11-9</td></tr>
+<tr><td>2</td><td>神经酰胺NP/AP/EOP/AS/NS/NG</td><td>Ceramides NP/AP/EOP/AS/NS/NG</td><td>100403-19-8</td></tr>
+<tr><td>3</td><td>依克多因</td><td>Ectoine</td><td>96702-03-3</td></tr>
+<tr><td>4</td><td>S-玻色因(羟丙基四氢吡喃三醇)</td><td>Pro-Xylane(Hydroxypropyl Tetrahydropyrantriol)</td><td>439685-79-7</td></tr>
+<tr><td>5</td><td>角鲨烷</td><td>Squalane</td><td>111-01-3</td></tr>
+<tr><td>6</td><td>角鲨烯</td><td>Squalene</td><td>111-02-4</td></tr>
+<tr><td>7</td><td>维生素C丙二醇透明质酸酯(VCHA)</td><td>Ascorbyl Propyl Hyaluronate</td><td>1800464-57-6</td></tr>
+<tr><td rowspan="6" class="merge-cell">抗衰 Anti-aging</td><td>8</td><td>蓝铜肽-1</td><td>Copper Tripeptide-1</td><td>89030-95-5</td></tr>
+<tr><td>9</td><td>蛇毒肽</td><td>Dipeptide Diaminobutyroyl Benzylamide Diacetate</td><td>823202-99-9</td></tr>
+<tr><td>10</td><td>左旋聚乳酸</td><td>PLLA</td><td>26811-96-1</td></tr>
+<tr><td>11</td><td>γ－氨基丁酸（GABA）</td><td>γ-aminobutyric acid（GABA）</td><td>56-12-2</td></tr>
+<tr><td>12</td><td>α-硫辛酸</td><td>Alpha Lipoic Acid</td><td>1077-28-7</td></tr>
+<tr><td>13</td><td>芋螺肽</td><td>Mu-conotoxinCnIIIC</td><td>936616-33-0</td></tr>
+<tr><td rowspan="2" class="merge-cell">防脱  Anti-hair loss</td><td>14</td><td>KX-826</td><td>Methylpyridinyl Fluoromethoxybenzonitrile Dimethyloxothiooxoimidazolidine</td><td>1272719-00-2</td></tr>
+<tr><td>15</td><td>生物素三肽-1</td><td>BiotinoylTripeptide-1</td><td>299157-54-3</td></tr>
+<tr><td rowspan="5" class="merge-cell">抗氧化 Anti-oxidant</td><td>16</td><td>L-(+)-麦角硫因</td><td>L-(+)-Ergothioneine</td><td>497-30-3</td></tr>
+<tr><td>17</td><td>α-红没药醇</td><td>(-)-α-Bisabolol</td><td>23089-26-1</td></tr>
+<tr><td>18</td><td>大麻萜酚（CBG）</td><td>Cannabigerol（CBG）</td><td>25654-31-3</td></tr>
+<tr><td>19</td><td>谷胱甘肽</td><td>Glutathione</td><td>70-18-8</td></tr>
+<tr><td>20</td><td>白藜芦醇</td><td>Resveratrol</td><td>501-36-0</td></tr>
+<tr><td rowspan="3" class="merge-cell">美白  Whitening</td><td>21</td><td>4-丁基间苯二酚</td><td>4-Butylresorcinol</td><td>18979-61-8</td></tr>
+<tr><td>22</td><td>维C乙基醚</td><td>3-0-EthylAscorbicAcid</td><td>86404-04-8</td></tr>
+<tr><td>23</td><td>KT-939</td><td>Methyloxetanecarbamidothiazolyl Resorcinol</td><td>3081328-14-2</td></tr>
+<tr><td rowspan="3" class="merge-cell">修复 Repairing</td><td>24</td><td>抗坏血酸四异棕榈酸酯</td><td>Ascorbyl Tetraisopalmitate</td><td>183476-82-6</td></tr>
+<tr><td>25</td><td>DNA钠(PDRN)</td><td>DNA Na(PDRN)</td><td>100403-24-5</td></tr>
+<tr><td>26</td><td>肝素钠</td><td>Heparin Sodium</td><td>9041-08-1</td></tr>                            </tbody></table></div></div>
+                
+                <!-- Intermediates -->
+                <div id="intermediates" class="cat-content hidden">
+                    <div class="product-table-wrap">
+                        <table class="product-table">
+                            <thead><tr><th data-en="Adaptation Disease" data-zh="适应症" data-ja="適応症" data-ko="적응증">Adaptation Disease</th><th>No.</th><th data-en="API Name (CN)" data-zh="API中文名" data-ja="API中国語名" data-ko="API 중국어명">API Name (CN)</th><th data-en="API Name (EN)" data-zh="API英文名" data-ja="API英語명" data-ko="API 영어명">API Name (EN)</th><th>CAS No.</th></tr></thead>
+                            <tbody>
+<tr><td rowspan="3" class="disease-cell">Antibiotic 抗生素</td><td>1</td><td>阿维巴坦钠</td><td>Avibactam Sodium</td><td>1192491-61-4</td></tr>
+<tr><td>2</td><td>头孢沙定</td><td>Cefroxadine</td><td>149-73-5</td></tr>
+<tr><td>3</td><td>氟氧头孢</td><td>Flomoxef</td><td>1797117-16-8</td></tr>
+<tr><td rowspan="21" class="disease-cell">Antifungal/Antibacterial  抗真菌剂/抗细菌</td><td>4</td><td>阿尼芬净</td><td>Anidulafungin</td><td>79411-15-7</td></tr>
+<tr><td>5</td><td>卡泊芬净</td><td>Caspofungin</td><td>135575-42-7</td></tr>
+<tr><td>6</td><td>达巴万星</td><td>Dalbavancin</td><td>110882-84-3</td></tr>
+<tr><td>7</td><td>恩麻芬净</td><td>Enfumafungin</td><td>260979-95-1</td></tr>
+<tr><td>8</td><td>那氟沙星</td><td>Levetiracetam</td><td>80076-46-6</td></tr>
+<tr><td rowspan="3">9</td><td rowspan="3">利拉萘酯</td><td rowspan="3">Liranaftate</td><td>89026-78-8</td></tr>
+<tr><td>88569-83-9</td></tr>
+<tr><td>84995-63-1</td></tr>
+<tr><td rowspan="2">12</td><td rowspan="2">米卡芬净</td><td rowspan="2">Micafungin</td><td>168110-44-9</td></tr>
+<tr><td>179162-55-1</td></tr>
+<tr><td>14</td><td>聚甲酚磺醛</td><td>Policresulen</td><td>9011-02-3</td></tr>
+<tr><td rowspan="2">15</td><td rowspan="2">泊沙康唑</td><td rowspan="2">Posaconazole</td><td>149809-43-8</td></tr>
+<tr><td>184177-83-1</td></tr>
+<tr><td rowspan="5">17</td><td rowspan="5">伏立康唑</td><td rowspan="5">Voriconazole</td><td>137234-87-8</td></tr>
+<tr><td>137234-74-3</td></tr>
+<tr><td>188416-28-6</td></tr>
+<tr><td>188416-20-8</td></tr>
+<tr><td>188416-29-7</td></tr>
+<tr><td rowspan="3">22</td><td rowspan="3">尼拉帕尼</td><td rowspan="3">Niraparib</td><td>1171197-20-8</td></tr>
+<tr><td>138229-59-1</td></tr>
+<tr><td>1038915-60-4</td></tr>
+<tr><td rowspan="13" class="disease-cell">Antivirals 抗病毒药</td><td>25</td><td>恩替卡韦</td><td>Entecavir</td><td>142217-81-0</td></tr>
+<tr><td rowspan="2">26</td><td rowspan="2">奥司他韦</td><td rowspan="2">Oseltamivir</td><td>204254-96-6</td></tr>
+<tr><td>204255-11-8</td></tr>
+<tr><td rowspan="3">28</td><td rowspan="3">奈玛特韦/利托那韦</td><td rowspan="3">Paxlovid</td><td>2628280-48-6</td></tr>
+<tr><td>565456-77-1</td></tr>
+<tr><td>328086-60-8</td></tr>
+<tr><td>31</td><td>帕唑帕尼</td><td>Pazopanib</td><td>6973-9-7</td></tr>
+<tr><td>32</td><td>雷特格韦</td><td>Raltegravir</td><td>519032-08-7</td></tr>
+<tr><td rowspan="5">33</td><td rowspan="5">富马酸丙酚替诺福韦</td><td rowspan="5">Tenofovir Alafenamide Fumarate</td><td>379270-37-8</td></tr>
+<tr><td>31618-90-3</td></tr>
+<tr><td>14047-28-0</td></tr>
+<tr><td>201341-05-1</td></tr>
+<tr><td>35180-01-9</td></tr>
+<tr><td rowspan="11" class="disease-cell">Anti-allergy 抗过敏</td><td rowspan="5">38</td><td rowspan="5">苯磺酸贝托司汀</td><td rowspan="5">Bepotastinebesilate</td><td>27652-89-7</td></tr>
+<tr><td>122368-54-1</td></tr>
+<tr><td>161558-45-8</td></tr>
+<tr><td>210095-58-2</td></tr>
+<tr><td>201594-84-5</td></tr>
+<tr><td rowspan="6">43</td><td rowspan="6">普仑司特</td><td rowspan="6">Pranlukast</td><td>30131-16-9</td></tr>
+<tr><td>110683-23-3</td></tr>
+<tr><td>13633-25-5</td></tr>
+<tr><td>90005-55-3</td></tr>
+<tr><td>99-76-3</td></tr>
+<tr><td>55408-10-1</td></tr>
+<tr><td rowspan="50" class="disease-cell">Antineoplastics 抗肿瘤</td><td rowspan="4">49</td><td rowspan="4">阿帕替尼</td><td rowspan="4">Apatinib</td><td>77-57-6</td></tr>
+<tr><td>115279-73-7</td></tr>
+<tr><td>1158560-99-6</td></tr>
+<tr><td>3731-53-1</td></tr>
+<tr><td rowspan="2">53</td><td rowspan="2">左亚叶酸钙</td><td rowspan="2">Calcium Levofolinate</td><td>59-30-3</td></tr>
+<tr><td>1492-18-8</td></tr>
+<tr><td rowspan="2">55</td><td rowspan="2">达沙替尼</td><td rowspan="2">Dasatinib</td><td>302964-24-5</td></tr>
+<tr><td>1780-26-3</td></tr>
+<tr><td>57</td><td>德鲁替康</td><td>Deruxtecan Int</td><td>30379-58-9</td></tr>
+<tr><td rowspan="3">58</td><td rowspan="3">恩扎鲁胺</td><td rowspan="3">Enzalutamide</td><td>1289942-66-0</td></tr>
+<tr><td>1332524-01-2</td></tr>
+<tr><td>143782-23-4</td></tr>
+<tr><td rowspan="3">61</td><td rowspan="3">厄洛替尼</td><td rowspan="3">Erlotinib</td><td>179688-29-0</td></tr>
+<tr><td>183319-69-9</td></tr>
+<tr><td>183322-18-1</td></tr>
+<tr><td>64</td><td>依维莫司</td><td>Everolimus</td><td>53123-88-9</td></tr>
+<tr><td>65</td><td>依喜替康</td><td>Exatecan</td><td>110351-94-5</td></tr>
+<tr><td>66</td><td>吉非替尼粗品</td><td>Gefitinib Crude</td><td>184475-35-2</td></tr>
+<tr><td>67</td><td>吉西他滨粗品</td><td>Gemcitabine Crude</td><td>122111-03-9</td></tr>
+<tr><td rowspan="4">68</td><td rowspan="4">甲磺酸伊马替尼</td><td rowspan="4">Imatinib Mesylate</td><td>220127-57-1</td></tr>
+<tr><td>106261-49-8</td></tr>
+<tr><td>52460-10-1</td></tr>
+<tr><td>152459-95-5</td></tr>
+<tr><td rowspan="3">72</td><td rowspan="3">尼罗替尼</td><td rowspan="3">Nilotinib</td><td>641571-10-0</td></tr>
+<tr><td>641571-11-1</td></tr>
+<tr><td>641569-94-0</td></tr>
+<tr><td>75</td><td>乙磺酸尼达尼布</td><td>Nintedanib Esilate</td><td>262368-30-9</td></tr>
+<tr><td rowspan="3">76</td><td rowspan="3">奥拉帕尼</td><td rowspan="3">Olaparib</td><td>1021298-67-8</td></tr>
+<tr><td>61260-15-9</td></tr>
+<tr><td>218301-22-5</td></tr>
+<tr><td rowspan="4">79</td><td rowspan="4">奥希替尼</td><td rowspan="4">Osimertinib</td><td>1421372-66-8</td></tr>
+<tr><td>1421372-67-9</td></tr>
+<tr><td>1421373-65-0</td></tr>
+<tr><td>1421373-66-1</td></tr>
+<tr><td>83</td><td>卡波铂/卡铂</td><td>Carboplatin Crude</td><td>41575-94-4</td></tr>
+<tr><td rowspan="4">84</td><td rowspan="4">帕博西尼</td><td rowspan="4">Palbociclib</td><td>866084-31-3</td></tr>
+<tr><td>571188-82-4</td></tr>
+<tr><td>1016636-76-2</td></tr>
+<tr><td>571188-59-5</td></tr>
+<tr><td rowspan="3">88</td><td rowspan="3">培美曲塞二钠</td><td rowspan="3">Pemetrexed Disodium</td><td>137281-39-1</td></tr>
+<tr><td>165049-28-5</td></tr>
+<tr><td>155405-80-4</td></tr>
+<tr><td rowspan="2">91</td><td rowspan="2">托法替尼</td><td rowspan="2">Tofacitinib</td><td>477600-73-0</td></tr>
+<tr><td>477600-74-1</td></tr>
+<tr><td rowspan="2">93</td><td rowspan="2">曲贝替丁</td><td rowspan="2">Trabectedin</td><td>87578-99-2</td></tr>
+<tr><td>96996-50-8</td></tr>
+<tr><td>95</td><td>索拉菲尼</td><td>Sorafenib</td><td>220000-87-3</td></tr>
+<tr><td rowspan="3">96</td><td rowspan="3">维莫德吉</td><td rowspan="3">Vismodegib</td><td>879088-40-1</td></tr>
+<tr><td>53250-83-2</td></tr>
+<tr><td>879085-55-9</td></tr>
+<tr><td rowspan="29" class="disease-cell">Anti-hyperglycemic 抗高血糖</td><td rowspan="2">99</td><td rowspan="2">卡格列净</td><td rowspan="2">Canagliflozin</td><td>1030825-20-7</td></tr>
+<tr><td>32384-65-9</td></tr>
+<tr><td rowspan="2">101</td><td rowspan="2">达格列净</td><td rowspan="2">Dapagliflozin</td><td>461432-24-6</td></tr>
+<tr><td>461432-25-7</td></tr>
+<tr><td rowspan="6">103</td><td rowspan="6">恩格列净</td><td rowspan="6">Empagliflozin</td><td>864070-37-1</td></tr>
+<tr><td>915095-99-7</td></tr>
+<tr><td>219823-47-9</td></tr>
+<tr><td>1079083-63-8</td></tr>
+<tr><td>915095-94-2</td></tr>
+<tr><td>1279691-36-9</td></tr>
+<tr><td rowspan="4">109</td><td rowspan="4">利格列汀</td><td rowspan="4">Linagliptin</td><td>109113-72-6</td></tr>
+<tr><td>309956-78-3</td></tr>
+<tr><td>853029-57-9</td></tr>
+<tr><td>666816-98-4</td></tr>
+<tr><td rowspan="2">113</td><td rowspan="2">替格列汀</td><td rowspan="2">Teneligliptin</td><td>401564-36-1</td></tr>
+<tr><td>401566-79-8</td></tr>
+<tr><td>115</td><td>替尔泊肽</td><td>Tirzepatide</td><td>2424-92-2</td></tr>
+<tr><td>116</td><td>沙格列汀</td><td>Saxagliptin</td><td>709031-45-8</td></tr>
+<tr><td rowspan="4">117</td><td rowspan="4">索马鲁肽</td><td rowspan="4">Semaglutide</td><td>116930-82-3</td></tr>
+<tr><td>203787-91-1</td></tr>
+<tr><td>843666-40-0</td></tr>
+<tr><td>871-70-5</td></tr>
+<tr><td rowspan="3">121</td><td rowspan="3">托格列净</td><td rowspan="3">Tofogliflozin</td><td>1201913-82-7</td></tr>
+<tr><td>1201913-74-7</td></tr>
+<tr><td>903566-46-1</td></tr>
+<tr><td rowspan="4">124</td><td rowspan="4">磷酸西他列汀</td><td rowspan="4">Sitagliptin Phosphate</td><td>486460-32-6</td></tr>
+<tr><td>486460-00-8</td></tr>
+<tr><td>1385663-48-8</td></tr>
+<tr><td>762240-92-6</td></tr>
+<tr><td rowspan="25" class="disease-cell">Anti-hypertensive 抗高血压</td><td rowspan="5">128</td><td rowspan="5">氨氯地平</td><td rowspan="5">Amlodipine</td><td>638-07-3</td></tr>
+<tr><td>3891-7-4</td></tr>
+<tr><td>14205-39-1</td></tr>
+<tr><td>3891-07-4</td></tr>
+<tr><td>89-98-5</td></tr>
+<tr><td rowspan="2">133</td><td rowspan="2">阿齐沙坦</td><td rowspan="2">Azilsartan</td><td>150058-27-8</td></tr>
+<tr><td>139481-44-0</td></tr>
+<tr><td>135</td><td>贝尼地平</td><td>Benidipine</td><td>64051-79-2</td></tr>
+<tr><td rowspan="4">136</td><td rowspan="4">卡维地洛</td><td rowspan="4">Carvedilol</td><td>52602-39-8</td></tr>
+<tr><td>64464-07-9</td></tr>
+<tr><td>51997-51-4</td></tr>
+<tr><td>72956-09-3</td></tr>
+<tr><td rowspan="4">140</td><td rowspan="4">非马沙坦</td><td rowspan="4">Fimasartan</td><td>503155-67-7</td></tr>
+<tr><td>124750-51-2</td></tr>
+<tr><td>1315478-13-7</td></tr>
+<tr><td>178554-19-3</td></tr>
+<tr><td rowspan="3">144</td><td rowspan="3">沙库巴曲</td><td rowspan="3">Sacubitril</td><td>149690-12-0</td></tr>
+<tr><td>1369773-39-6</td></tr>
+<tr><td>1012341-50-2</td></tr>
+<tr><td rowspan="6">147</td><td rowspan="6">替米沙坦</td><td rowspan="6">Telmisartan</td><td>152628-03-0</td></tr>
+<tr><td>152628-02-9</td></tr>
+<tr><td>528560-93-2</td></tr>
+<tr><td>114772-38-2</td></tr>
+<tr><td>25148-68-9</td></tr>
+<tr><td>6306-52-1</td></tr>
+<tr><td rowspan="15" class="disease-cell">Anti-hypercholesterolemia 抗高胆固醇</td><td rowspan="2">153</td><td rowspan="2">阿托伐他汀钙</td><td rowspan="2">Atorvastatin Calcium</td><td>134495-00-9</td></tr>
+<tr><td>125971-95-1</td></tr>
+<tr><td rowspan="3">155</td><td rowspan="3">依折麦布</td><td rowspan="3">Ezetimibe</td><td>189028-93-1</td></tr>
+<tr><td>272778-12-8</td></tr>
+<tr><td>163222-33-1</td></tr>
+<tr><td rowspan="3">158</td><td rowspan="3">匹伐他汀钙</td><td rowspan="3">Pitavastatin Calcium</td><td>121660-11-5</td></tr>
+<tr><td>121660-37-5</td></tr>
+<tr><td>147489-06-3</td></tr>
+<tr><td rowspan="7">161</td><td rowspan="7">瑞舒伐他汀钙</td><td rowspan="7">Rosuvastatin Calcium</td><td>147118-35-2</td></tr>
+<tr><td>147118-37-4</td></tr>
+<tr><td>124655-09-0</td></tr>
+<tr><td>147118-40-9</td></tr>
+<tr><td>1326302-97-9</td></tr>
+<tr><td>355806-00-7</td></tr>
+<tr><td>289042-12-2</td></tr>
+<tr><td rowspan="21" class="disease-cell">Antithrombotic 抗血栓</td><td>168</td><td>阿加曲班</td><td>Argatroban</td><td>74874-08-1</td></tr>
+<tr><td rowspan="4">169</td><td rowspan="4">硫酸氢氯吡格雷</td><td rowspan="4">Clopidogrel Bisulphate</td><td>88744-36-9</td></tr>
+<tr><td>141109-19-5</td></tr>
+<tr><td>40412-06-4</td></tr>
+<tr><td>141109-14-0</td></tr>
+<tr><td rowspan="10">173</td><td rowspan="10">依度沙班</td><td rowspan="10">Edoxaban</td><td>1210348-34-7</td></tr>
+<tr><td>720720-96-7</td></tr>
+<tr><td>1243308-37-3</td></tr>
+<tr><td>1353893-22-7</td></tr>
+<tr><td>365997-33-7</td></tr>
+<tr><td>480452-36-6</td></tr>
+<tr><td>123333-53-9</td></tr>
+<tr><td>25952-53-8</td></tr>
+<tr><td>365998-36-3</td></tr>
+<tr><td>349125-08-2</td></tr>
+<tr><td>183</td><td>尼麦角林</td><td>Nicergoline</td><td>23495-64-9</td></tr>
+<tr><td rowspan="3">184</td><td rowspan="3">普拉格雷</td><td rowspan="3">Prasugrel</td><td>115473-15-9</td></tr>
+<tr><td>204205-33-4</td></tr>
+<tr><td>18162-48-6</td></tr>
+<tr><td rowspan="2">187</td><td rowspan="2">沙格雷酯</td><td rowspan="2">Sarpogrelate</td><td>167145-13-3</td></tr>
+<tr><td>135261-74-4</td></tr>
+<tr><td rowspan="6" class="disease-cell">Gout and hyperuricemia 治疗痛风和高尿酸血症</td><td rowspan="5">189</td><td rowspan="5">非布司他</td><td rowspan="5">Febuxostat</td><td>25984-63-8</td></tr>
+<tr><td>161797-99-5</td></tr>
+<tr><td>161798-01-2</td></tr>
+<tr><td>161798-03-4</td></tr>
+<tr><td>160844-75-7</td></tr>
+<tr><td>194</td><td>托匹司他</td><td>Topiroxostat</td><td>94413-64-6</td></tr>
+<tr><td rowspan="7" class="disease-cell">Heart Rate Inhibitor  心率抑制剂</td><td rowspan="4">195</td><td rowspan="4">盐酸伊伐布雷定</td><td rowspan="4">Lvabradine Hydrochloride</td><td>35202-54-1</td></tr>
+<tr><td>866783-13-3</td></tr>
+<tr><td>73942-87-7</td></tr>
+<tr><td>85175-59-3</td></tr>
+<tr><td>199</td><td>美西律</td><td>Mexiletine</td><td>2446-83-5</td></tr>
+<tr><td>200</td><td>西罗莫司</td><td>Sirolimus</td><td>53123-88-9</td></tr>
+<tr><td>201</td><td>盐酸吡西卡尼</td><td>Pilsicainide Hydrochloride</td><td>87-62-7</td></tr>
+<tr><td rowspan="5" class="disease-cell">Antipsychotic 抗精神病药</td><td rowspan="2">202</td><td rowspan="2">富马酸喹硫平</td><td rowspan="2">Quetiapine</td><td>13349-82-1</td></tr>
+<tr><td>3159-07-7</td></tr>
+<tr><td rowspan="3">204</td><td rowspan="3">盐酸鲁拉西酮</td><td rowspan="3">Lurasidone hydrochloride</td><td>65376-05-8</td></tr>
+<tr><td>87691-87-0</td></tr>
+<tr><td>14805-29-9</td></tr>
+<tr><td rowspan="2" class="disease-cell">Alzheimer’s Disease  阿尔茨海默病</td><td rowspan="2">207</td><td rowspan="2">多奈哌齐</td><td rowspan="2">Donepezil</td><td>120013-39-0</td></tr>
+<tr><td>120014-06-4</td></tr>
+<tr><td class="disease-cell">Parkinson’s disease（PD） 帕金森病</td><td>209</td><td>罗替戈汀</td><td>Rotigotine</td><td>125572-93-2</td></tr>
+<tr><td rowspan="18" class="disease-cell">Anti-migraine 抗偏头痛</td><td>210</td><td>琥珀酸舒马普坦</td><td>Sumatriptan Succinate</td><td>103628-48-4</td></tr>
+<tr><td>211</td><td>佐米曲普坦</td><td>Zolmitriptan</td><td>152305-23-2</td></tr>
+<tr><td rowspan="10">212</td><td rowspan="10">非奈利酮</td><td rowspan="10">Finerenone</td><td>2640506-74-5</td></tr>
+<tr><td>1050477-45-6</td></tr>
+<tr><td>1050477-44-5</td></tr>
+<tr><td>1050477-43-4</td></tr>
+<tr><td>1050477-39-8</td></tr>
+<tr><td>95306-64-2</td></tr>
+<tr><td>21962-45-8</td></tr>
+<tr><td>65193-87-5</td></tr>
+<tr><td>2640574-73-6</td></tr>
+<tr><td>1050477-31-0</td></tr>
+<tr><td rowspan="6">222</td><td rowspan="6">米洛巴林</td><td rowspan="6">Mirogabalin</td><td>1644251-45-5</td></tr>
+<tr><td>2767341-19-3</td></tr>
+<tr><td>1415817-42-3</td></tr>
+<tr><td>1246542-63-1</td></tr>
+<tr><td>644251-52-4</td></tr>
+<tr><td>1138245-13-2</td></tr>
+<tr><td class="disease-cell">Metabolic regulator 代谢调节剂</td><td>228</td><td>R-硫辛酸</td><td>R-Thioctic acid</td><td>1200-22-2</td></tr>
+<tr><td class="disease-cell">Anti-inflammatory analgesics 镇痛消炎药</td><td>229</td><td>洛索洛芬酸</td><td>Loxoprofen Acid</td><td>68767-14-6</td></tr>
+<tr><td rowspan="16" class="disease-cell">Gastrointestinal regulation 胃肠道调节</td><td rowspan="3">230</td><td rowspan="3">伊托必利</td><td rowspan="3">Itopride</td><td>93-07-2</td></tr>
+<tr><td>122892-31-3</td></tr>
+<tr><td>20059-73-8</td></tr>
+<tr><td rowspan="2">233</td><td rowspan="2">拉夫替丁</td><td rowspan="2">Lafutidine</td><td>146447-26-9</td></tr>
+<tr><td>123855-55-0</td></tr>
+<tr><td rowspan="4">235</td><td rowspan="4">莫沙必利</td><td rowspan="4">Mosapride</td><td>112885-41-3</td></tr>
+<tr><td>108282-38-8</td></tr>
+<tr><td>112914-13-3</td></tr>
+<tr><td>112913-94-7</td></tr>
+<tr><td rowspan="3">239</td><td rowspan="3">特戈拉赞</td><td rowspan="3">Tegoprazan</td><td>942485-42-9</td></tr>
+<tr><td>1270294-05-7</td></tr>
+<tr><td>942195-86-0</td></tr>
+<tr><td rowspan="4">242</td><td rowspan="4">富马酸沃诺拉赞</td><td rowspan="4">Vonoprazan Fumarate</td><td>881674-56-2</td></tr>
+<tr><td>16133-25-8</td></tr>
+<tr><td>25895-60-7</td></tr>
+<tr><td>1240948-77-9</td></tr>
+<tr><td rowspan="5" class="disease-cell">Arthrophlogosis 银屑病关节炎</td><td rowspan="4">246</td><td rowspan="4">乌帕替尼</td><td rowspan="4">Updadacitinib</td><td>2050057-56-0</td></tr>
+<tr><td>1201187-44-1</td></tr>
+<tr><td>1428243-26-8</td></tr>
+<tr><td>12135-22-7</td></tr>
+<tr><td>250</td><td>阿普斯特</td><td>Apremilast</td><td>253168-94-4</td></tr>
+<tr><td rowspan="9" class="disease-cell">Overactive bladder（OAB） 膀胱过度活动症</td><td rowspan="3">251</td><td rowspan="3">米拉贝隆</td><td rowspan="3">Mirabegron</td><td>29676-71-9</td></tr>
+<tr><td>52128-22-0</td></tr>
+<tr><td>521284-21-9</td></tr>
+<tr><td>254</td><td>丙哌维林</td><td>Propiverine</td><td>128-08-5</td></tr>
+<tr><td rowspan="5">255</td><td rowspan="5">维贝格龙</td><td rowspan="5">Vibegron</td><td>163625-46-5</td></tr>
+<tr><td>1190391-87-7</td></tr>
+<tr><td>1190391-88-8</td></tr>
+<tr><td>1190391-89-9</td></tr>
+<tr><td>1190391-90-2</td></tr>
+<tr><td class="disease-cell">Erectile Dysfunction（ED） 勃起功能障碍</td><td>260</td><td>阿伐那非</td><td>Avanafil</td><td>41965-95-1</td></tr>
+<tr><td rowspan="12" class="disease-cell">Eye drops 滴眼液</td><td rowspan="3">261</td><td rowspan="3">利非司特</td><td rowspan="3">Lifitegrast</td><td>851784-82-2</td></tr>
+<tr><td>1194550-59-8</td></tr>
+<tr><td>1156547-55-5</td></tr>
+<tr><td rowspan="4">264</td><td rowspan="4">盐酸奥洛他定</td><td rowspan="4">Olopatadine Hydrochloride</td><td>55453-89-9</td></tr>
+<tr><td>55453-87-7</td></tr>
+<tr><td>27710-82-3</td></tr>
+<tr><td>18355-96-9</td></tr>
+<tr><td rowspan="2">268</td><td rowspan="2">瑞舒地尔</td><td rowspan="2">Ripasudil</td><td>906820-10-8</td></tr>
+<tr><td>223644-14-2</td></tr>
+<tr><td rowspan="3">270</td><td rowspan="3">利非司特/立他司特</td><td rowspan="3">Lifitegrast</td><td>77095-51-3</td></tr>
+<tr><td>1289646-93-0</td></tr>
+<tr><td>851785-21-2</td></tr>
+<tr><td rowspan="4" class="disease-cell">Polypeptide 多肽</td><td rowspan="4">273</td><td rowspan="4">肽</td><td rowspan="4">Pebtide</td><td>35661-39-3</td></tr>
+<tr><td>204251-24-1</td></tr>
+<tr><td>132327-80-1</td></tr>
+<tr><td>68858-20-8</td></tr>
+<tr><td rowspan="20" class="disease-cell">Others 其他</td><td>277</td><td>丁基羟基苯甲醚</td><td>Butylated Hydroxyanisole</td><td>25013-16-5</td></tr>
+<tr><td>278</td><td>丁酸</td><td>Butyric Acid</td><td>107-92-6</td></tr>
+<tr><td>279</td><td>疏水胶态二氧化硅</td><td>Hydrophobic Colloidal Silica</td><td>68611-44-9</td></tr>
+<tr><td>280</td><td>L-樟脑磺酸</td><td>L-(-)-Camphorsulfonic Acid</td><td>35963-20-3</td></tr>
+<tr><td>281</td><td>L-赖氨酸</td><td>L-Ysine</td><td>657-27-2</td></tr>
+<tr><td>282</td><td>去氧胆酸</td><td>Deoxycholic Acid</td><td>83-44-3</td></tr>
+<tr><td>283</td><td>聚乙二醇 PEG 3350</td><td>Polyethylene Glycol 3350</td><td>25322-68-3</td></tr>
+<tr><td>284</td><td>椰油基羟乙基磺酸钠</td><td>Sodium Cocoyl Isethionate</td><td>61789-32-0</td></tr>
+<tr><td rowspan="12">285</td><td rowspan="12">定制产品</td><td rowspan="12">CDMO</td><td>107469-72-7</td></tr>
+<tr><td>1060804-15-0</td></tr>
+<tr><td>1405128-33-7</td></tr>
+<tr><td>51364-51-3</td></tr>
+<tr><td>959040-06-3</td></tr>
+<tr><td>2089253-23-4</td></tr>
+<tr><td>132434-82-3</td></tr>
+<tr><td>2306245-94-1</td></tr>
+<tr><td>84201-40-1</td></tr>
+<tr><td>2367588-01-8</td></tr>
+<tr><td>1610413-97-2</td></tr>
+<tr><td>796073-55-7</td></tr>                            </tbody></table></div></div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer - 与主页一致 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="margin-bottom: 10px;">
+                        <img src="logo.png" alt="Aurun International" style="height: 45px;">
+                    </div>
+                    <div style="font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 3px;">Aurun International</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.7);">Singapore Pte. Ltd.</div>
+                    <p data-en="Based in Singapore, we provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets." data-zh="总部位于新加坡，我们为生物制药行业提供一站式项目与市场解决方案，连接优质制造资源与下游市场。" data-ko="싱가포르에 본사를 두고 있으며, 생물 제약 업계에 원스톱 프로젝트 및 시장 솔루션을 제공하여 고품질 제조 자원을 하류 시장과 연결합니다." data-ja="シンガポールに本社を置き、バイオ製薬業界にワンストップのプロジェクト・市場ソリューションを提供し、高品質な製造リソースを下流市場につなげます。">Based in Singapore, we provide one-stop project and market solutions in the biopharmaceutical industry, connecting high-quality manufacturing resources with downstream markets.</p>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Quick Links" data-zh="快速链接" data-ko="빠른 링크" data-ja="クイックリンク">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home" data-en="Home" data-zh="首页" data-ko="홈" data-ja="ホーム">Home</a></li>
+                        <li><a href="index.html#about" data-en="About Us" data-zh="关于我们" data-ko="회사 소개" data-ja="会社概要">About Us</a></li>
+                        <li><a href="index.html#products" data-en="Our Business" data-zh="核心业务" data-ko="핵심 비즈니스" data-ja="コアビジネス">Our Business</a></li>
+                        <li><a href="index.html#products" data-en="Business" data-zh="业务" data-ko="서비스" data-ja="事業">Business</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Products" data-zh="产品" data-ko="제품" data-ja="製品">Products</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#products-new" data-en="API" data-zh="原料药" data-ko="원료약" data-ja="原薬">API</a></li>
+                        <li><a href="index.html#products-new" data-en="Biosimilar" data-zh="生物类似药" data-ko="바이오시밀러" data-ja="バイオシミラー">Biosimilar</a></li>
+                        <li><a href="index.html#products-new" data-en="Cosmetic" data-zh="化妆品原料" data-ko="화장품" data-ja="化粧品">Cosmetic</a></li>
+                        <li><a href="index.html#products-new" data-en="Intermediates" data-zh="中间体" data-ko="중간체" data-ja="中間体">Intermediates</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title" data-en="Contact" data-zh="联系" data-ko="문의" data-ja="お問い合わせ">Contact</div>
+                    <ul class="footer-links">
+                        <li><a href="mailto:ars02@aurunint.com">ars02@aurunint.com</a></li>
+                        <li><a href="https://www.aurunint.com">www.aurunint.com</a></li>
+                        <li>Singapore</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span data-en="© 2026 Aurun International Singapore Pte. Ltd. All rights reserved." data-zh="© 2026 Aurun International Singapore Pte. Ltd. 保留所有权利。" data-ko="© 2026 Aurun International Singapore Pte. Ltd. 모든 권리 보유." data-ja="© 2026 Aurun International Singapore Pte. Ltd. All rights reserved.">© 2026 Aurun International Singapore Pte. Ltd. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+    
+        <script>
+        // Language Switching - 与主页完全一致
+        const langLinks = document.querySelectorAll('.lang-bar a');
+        let currentLang = 'en';
+        
+        // Read language - URL param first, then localStorage
+        (function() {
+            // First check URL param
+            const params = new URLSearchParams(window.location.search);
+            const urlLang = params.get('lang');
+            if (urlLang && ['en','zh','ko','ja'].includes(urlLang)) {
+                currentLang = urlLang;
+                localStorage.setItem('aurun_lang', currentLang);
+            } else {
+                // Fallback to localStorage
+                const savedLang = localStorage.getItem('aurun_lang');
+                if (savedLang && ['en','zh','ko','ja'].includes(savedLang)) {
+                    currentLang = savedLang;
+                }
+            }
+            
+            langLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.lang === currentLang);
+            });
+            // Update all elements with language data attributes
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const translation = el.dataset[currentLang];
+                if (translation) el.textContent = translation;
+            });
+            updateNavLinks();
+        })();
+
+        function updateNavLinks() {
+            // Update all nav links with currentLang
+            document.querySelectorAll('a[href*="lang=XXX"]').forEach(link => {
+                let href = link.getAttribute('href');
+                href = href.replace(/lang=XXX/, "lang=" + currentLang);
+                link.setAttribute('href', href);
+            });
+        }
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('aurun_lang', lang);
+            
+            // Update top bar
+            langLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.lang === currentLang);
+            });
+            
+            // Update ALL translatable text content
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const translation = el.dataset[currentLang];
+                if (translation) el.textContent = translation;
+            });
+            
+            // Update search box placeholder
+            const searchInput = document.getElementById('productSearch');
+            if (searchInput && searchInput.dataset['placeholder' + lang.charAt(0).toUpperCase() + lang.slice(1)]) {
+                searchInput.placeholder = searchInput.dataset['placeholder' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+            }
+            
+            // Update all links with currentLang
+            updateNavLinks();
+        }
+
+        langLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.dataset.lang);
+            });
+        });
+
+        function showCat(cat) {
+            document.getElementById('welcome').classList.add('hidden');
+            document.querySelectorAll('.cat-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
+            document.getElementById(cat).classList.remove('hidden');
+            document.querySelector('[data-cat="' + cat + '"]').classList.add('active');
+            
+            const url = new URL(window.location.href);
+            url.searchParams.set('category', cat);
+            url.searchParams.set('lang', currentLang);
+            history.replaceState({}, '', url.toString());
+            
+            // Initialize pagination for current category
+            initPagination(cat);
+        }
+        
+        // Disable pagination - show all products
+        function initPagination(catId) {
+            const catContent = document.getElementById(catId);
+            if (!catContent) return;
+            
+            // Remove any existing pagination buttons
+            const paginationDivs = catContent.querySelectorAll('.pagination');
+            paginationDivs.forEach(div => div.remove());
+        }
+        
+        // 检查URL参数并显示对应分类
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const cat = params.get('category');
+            if (cat) {
+                showCat(cat);
+            }
+        });
+        
+        // Search function
+        function searchProducts(query) {
+            query = query.toLowerCase().trim();
+            if (!query) {
+                // Show all categories
+                document.querySelectorAll('.cat-content').forEach(cat => cat.classList.remove('hidden'));
+                document.getElementById('welcome').classList.remove('hidden');
+                document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+                return;
+            }
+            
+            // Hide welcome, show all categories first
+            document.getElementById('welcome').classList.add('hidden');
+            document.querySelectorAll('.cat-content').forEach(cat => cat.classList.remove('hidden'));
+            
+            // Search in all tables
+            let found = false;
+            document.querySelectorAll('.cat-content').forEach(cat => {
+                const catId = cat.id;
+                let catHasMatch = false;
+                
+                cat.querySelectorAll('tr').forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    const match = text.includes(query);
+                    row.style.display = match ? '' : 'none';
+                    if (match) catHasMatch = true;
+                });
+                
+                if (!catHasMatch) {
+                    cat.classList.add('hidden');
+                } else {
+                    found = true;
+                }
+            });
+            
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+        }
+    </script>
+</body>
+</html>
